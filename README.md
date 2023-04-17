@@ -1,6 +1,4 @@
-# HomeSwap
-
-# 🏨 Prison Break: Software Engineering Project as part of the apprenticeship at ISEP
+# 🏨 HomeSwap: Software Engineering Project as part of the apprenticeship at ISEP
 
 ## Getting Started with Create React App
 
