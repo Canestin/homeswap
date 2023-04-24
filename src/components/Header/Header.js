@@ -10,13 +10,14 @@ export default function Header() {
 			<div className={styles.left}>
 				<img src={logo} alt="logo" />
 				<ul>
-					<li>Disponibilités</li>
-					<li>A Propos</li>
+					<li>Availability</li>
+					<li>About</li>
 					<li>Contacts</li>
 				</ul>
 			</div>
 			<div className={styles.right}>
-				<BiUserCircle color={Colors.red} size={40} />
+				<span className={styles.putAcc}>List my property on HomeSwap</span>
+				<BiUserCircle cursor="pointer" color={Colors.red} size={40} />
 			</div>
 		</div>
 	);
