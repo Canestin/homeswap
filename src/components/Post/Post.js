@@ -3,9 +3,9 @@ import styles from "./Post.module.css";
 import likeIcon from "../../images/like-icon.png";
 import starIcon from "../../images/star.png";
 
-export default function Post({ img, location, dates, rating }) {
+export default function Post({ img, location, dates, rating, style }) {
 	return (
-		<div className={styles.container}>
+		<div className={`${styles.container} ${style && style}`}>
 			<div className={`${styles.starIcon} ${styles.icon}`}>
 				<img src={starIcon} alt="star icon" /> <span>{rating}</span>
 			</div>
