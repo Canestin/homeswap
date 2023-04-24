@@ -9,10 +9,10 @@ import writer3 from "../../images/writer3.png";
 import search from "../../images/search.png";
 import catnice from "../../images/catnice.png";
 import support from "../../images/support.png";
-import post1 from "../../images/post1.png";
-import post2 from "../../images/post2.png";
-import post3 from "../../images/post3.png";
-import post4 from "../../images/post4.png";
+import post1 from "../../images/posts/post1.png";
+import post2 from "../../images/posts/post2.png";
+import post3 from "../../images/posts/post3.png";
+import post4 from "../../images/posts/post4.png";
 import Post from "../../components/Post/Post";
 import Footer from "../../components/Footer/Footer";
 
