@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import styles from "./Availability.module.css";
+import styles from "./Availability.module.scss";
 import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
+// import Footer from "../../components/Footer/Footer";
 import Post from "../../components/Post/Post";
 import { duplicatePosts } from "../../data/fakePosts";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
-import { GrLocation, GrCalendar } from "react-icons/gr";
-import { RiSearch2Line } from "react-icons/ri";
+import Search from "../../components/Search/Search";
 
 function Availability() {
 	const [posts, setposts] = useState(duplicatePosts);
@@ -36,6 +35,7 @@ function Availability() {
 			setposts(duplicatePosts.concat(posts));
 			setLoading(false);
 		}, 1000);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [page]);
 
 	return (
@@ -44,25 +44,7 @@ function Availability() {
 			<div className={styles.container}>
 				<h1>Availability</h1>
 
-				<div className={styles.topSearch}>
-					<div>
-						<GrLocation size={24} />
-						<div className={styles.topSearchInfos}>
-							<span>Where ?</span>
-							<input type="text" placeholder="Find a destination" />
-						</div>
-					</div>
-					<div>
-						<GrCalendar size={20} />
-						<div className={styles.topSearchInfos}>
-							<span>When ?</span>
-							<input type="text" placeholder="Select a date" />
-						</div>
-					</div>
-					<div>
-						<RiSearch2Line />
-					</div>
-				</div>
+				<Search />
 
 				<div className={styles.post}>
 					{posts.map((post, id) => (
