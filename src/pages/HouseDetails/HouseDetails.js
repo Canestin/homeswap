@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./HouseDetails.module.css";
+import styles from "./HouseDetails.module.scss";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import star from "../../images/star.png";
