@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Footer.module.css";
+import styles from "./Footer.module.scss";
 import { TfiLinkedin, TfiFacebook } from "react-icons/tfi";
 import { GrInstagram, GrYoutube, GrTwitter } from "react-icons/gr";
 import sendImg from "../../images/send-email.png";

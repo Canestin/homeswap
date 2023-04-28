@@ -1,9 +1,10 @@
-@import url("../../constants/variables.css");
+@import url("../../constants/_variables.scss");
 
 * {
 	box-sizing: border-box;
 }
 .container {
+	padding-top: 70px;
 }
 
 .top {
@@ -40,36 +41,7 @@
 
 .topSearch {
 	position: absolute;
-	width: 40%;
-	height: 70px;
 	top: 80%;
-	background-color: white;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	border: 1px solid var(--gray-text);
-	border-radius: 50px;
-}
-
-.topSearch > div {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 20px;
-}
-
-.topSearch > div > div {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: flex-start;
-}
-
-.topSearch > div > div > input {
-	width: 100%;
-}
-
-.topSearchInfos span {
-	margin-bottom: 10px;
 }
 
 .commentsContainer {

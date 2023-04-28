@@ -1,8 +1,7 @@
 import React from "react";
 import Header from "../../components/Header/Header";
-import styles from "./Home.module.css";
+import styles from "./Home.module.scss";
 import top from "../../images/top.jpg";
-import { GrLocation, GrCalendar } from "react-icons/gr";
 import writer1 from "../../images/writer1.png";
 import writer2 from "../../images/writer2.png";
 import writer3 from "../../images/writer3.png";
@@ -15,8 +14,9 @@ import post3 from "../../images/posts/post3.png";
 import post4 from "../../images/posts/post4.png";
 import Post from "../../components/Post/Post";
 import Footer from "../../components/Footer/Footer";
+import Search from "../../components/Search/Search";
 
-export default function Home() {
+function Home() {
 	return (
 		<div className={styles.container}>
 			<Header />
@@ -28,8 +28,7 @@ export default function Home() {
 						We have several thousand apartments for all tastes around the world
 					</p>
 				</div>
-
-				<div className={styles.topSearch}>
+				{/* <div className={styles.topSearch}>
 					<div>
 						<GrLocation size={20} />
 						<div className={styles.topSearchInfos}>
@@ -44,6 +43,9 @@ export default function Home() {
 							<input type="text" placeholder="Select a date" />
 						</div>
 					</div>
+				</div> */}
+				<div className={styles.topSearch}>
+					<Search />
 				</div>
 			</div>
 
@@ -155,3 +157,5 @@ export default function Home() {
 		</div>
 	);
 }
+
+export default Home;

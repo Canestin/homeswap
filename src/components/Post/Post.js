@@ -1,11 +1,16 @@
 import React from "react";
-import styles from "./Post.module.css";
+import styles from "./Post.module.scss";
 import likeIcon from "../../images/like-icon.png";
 import starIcon from "../../images/star.png";
+import { useNavigate } from "react-router-dom";
 
 export default function Post({ img, location, dates, rating, style }) {
+	const navigate = useNavigate();
 	return (
-		<div className={`${styles.container} ${style && style}`}>
+		<div
+			onClick={() => navigate("/house-details")}
+			className={`${styles.container} ${style && style}`}
+		>
 			<div className={`${styles.starIcon} ${styles.icon}`}>
 				<img src={starIcon} alt="star icon" /> <span>{rating}</span>
 			</div>
