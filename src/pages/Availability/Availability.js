@@ -3,7 +3,7 @@ import styles from "./Availability.module.scss";
 import Header from "../../components/Header/Header";
 // import Footer from "../../components/Footer/Footer";
 import Post from "../../components/Post/Post";
-import { duplicatePosts } from "../../data/fakePosts";
+import { duplicatePosts } from "../../data/FakePosts";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import Search from "../../components/Search/Search";
 

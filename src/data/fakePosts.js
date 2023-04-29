@@ -1,4 +1,4 @@
-import posts from "../images/posts/";
+import posts from "../images/posts";
 
 const fakePosts = [
 	{
@@ -19,7 +19,7 @@ const fakePosts = [
 	{
 		id: "3",
 		img: posts[2],
-		location: ["New York City", "United States"],
+		location: ["New York", "US"],
 		dates: ["5 September", "20 September"],
 		rating: 4.9,
 	},
@@ -88,6 +88,6 @@ const fakePosts = [
 	},
 ];
 
-let dp = fakePosts.concat(fakePosts);
+const dp = fakePosts.concat(fakePosts);
 
 export { fakePosts, dp as duplicatePosts };

@@ -2,9 +2,9 @@ import React from "react";
 import Header from "../../components/Header/Header";
 import styles from "./Home.module.scss";
 import top from "../../images/top.jpg";
-import writer1 from "../../images/writer1.png";
-import writer2 from "../../images/writer2.png";
-import writer3 from "../../images/writer3.png";
+import user1 from "../../images/user1.png";
+import user2 from "../../images/user2.png";
+import user3 from "../../images/user3.png";
 import search from "../../images/search.png";
 import catnice from "../../images/catnice.png";
 import support from "../../images/support.png";
@@ -60,7 +60,7 @@ function Home() {
 
 				<div className={styles.features}>
 					<div className={styles.OneFeature}>
-						<img src={search} alt="writer1" />
+						<img src={search} alt="user1" />
 						<h3>Simple search process</h3>
 						<p className={styles.textFeature}>
 							We checked it out, even the kid did it, but it was my mom's
@@ -68,7 +68,7 @@ function Home() {
 						</p>
 					</div>
 					<div className={styles.OneFeature}>
-						<img src={catnice} alt="writer1" />
+						<img src={catnice} alt="user1" />
 						<h3>24/7 Support</h3>
 						<p className={styles.textFeature}>
 							Is there something you don't understand? Feel free to call us.
@@ -76,7 +76,7 @@ function Home() {
 						</p>
 					</div>
 					<div className={styles.OneFeature}>
-						<img src={support} alt="writer1" />
+						<img src={support} alt="user1" />
 						<h3>We are nice</h3>
 						<p className={styles.textFeature}>
 							Fantasy is over, there will be something really convincing here
@@ -89,7 +89,7 @@ function Home() {
 				<h1>Satisfied users</h1>
 				<div className={styles.comments}>
 					<div className={styles.oneComment}>
-						<img src={writer1} alt="writer1" />
+						<img src={user1} alt="user1" />
 						<p className={styles.textComment}>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 							eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -99,7 +99,7 @@ function Home() {
 						</div>
 					</div>
 					<div className={styles.oneComment}>
-						<img src={writer2} alt="writer1" />
+						<img src={user2} alt="user1" />
 						<p className={styles.textComment}>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 							eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -110,7 +110,7 @@ function Home() {
 						</div>
 					</div>
 					<div className={styles.oneComment}>
-						<img src={writer3} alt="writer1" />
+						<img src={user3} alt="user1" />
 						<p className={styles.textComment}>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 							eiusmod tempor incididunt ut labore et dolore magna aliqua.
