@@ -13,6 +13,7 @@ export default function Header() {
 				<img onClick={() => navigate("/")} src={logo} alt="logo" />
 				<ul>
 					<li onClick={() => navigate("/availability")}>Availability</li>
+					<li onClick={() => navigate("/host")}>Host</li>
 					<li onClick={() => navigate("/about")}>About</li>
 					<li onClick={() => navigate("/contact")}>Contact</li>
 				</ul>

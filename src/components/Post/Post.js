@@ -21,7 +21,7 @@ export default function Post({ img, location, dates, rating, style }) {
 				<img src={img} alt="Post" />
 			</div>
 			<h3>{location[0] + ", " + location[1]}</h3>
-			<p>{dates[0] + " — " + dates[1]}</p>
+			{dates && <p>{dates[0] + " — " + dates[1]}</p>}
 		</div>
 	);
 }
