@@ -51,7 +51,7 @@ function HostProfile() {
 								<span>évaluations</span>
 							</div>
 							<div>
-								<h2>4.80</h2>
+								<h2>4.8</h2>
 								<span>en note globale</span>
 							</div>
 							<div>

@@ -9,7 +9,7 @@ const fakeComments = [
 		writerName: "Jane",
 		date: "May 2020",
 		content:
-			"Jonh est un hôte accueillant qui est à l’écoute et qui laisse également de l’indépendance et de la tranquillité aux invités.",
+			"Jane est un hôte accueillant qui est à l’écoute et qui laisse également de l’indépendance et de la tranquillité aux invités.",
 	},
 	{
 		writerImg: user2,
