@@ -5,6 +5,7 @@ import NotFound from "./pages/NotFount/NotFount";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import HostProfile from "./pages/HostProfile/HostProfile";
+import Messaging from "./pages/Messaging/Messaging";
 
 function App() {
 	const { pathname } = useLocation();
@@ -19,6 +20,7 @@ function App() {
 				<Route path="/" element={<Home />} />
 				<Route path="/availability" element={<Availability />} />
 				<Route path="/house-details" element={<HouseDetails />} />
+				<Route path="/messaging" element={<Messaging />} />
 				<Route path="/host" element={<HostProfile />} />
 				<Route path="/*" element={<NotFound />} />
 			</Routes>
