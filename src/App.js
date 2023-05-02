@@ -6,6 +6,12 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import HostProfile from "./pages/HostProfile/HostProfile";
 import Messaging from "./pages/Messaging/Messaging";
+import AddPlace from "./pages/AddPlace/AddPlace";
+import AddNumbers from "./pages/AddNumbers/AddNumbers";
+import Equipment from "./pages/Equipment/Equipment";
+import AddPhotos from "./pages/AddPhotos/AddPhotos";
+import AddTitle from "./pages/AddTitle/AddTitle";
+import AddDescription from "./pages/AddDescription/AddDescription";
 
 function App() {
 	const { pathname } = useLocation();
@@ -22,6 +28,12 @@ function App() {
 				<Route path="/house-details" element={<HouseDetails />} />
 				<Route path="/messaging" element={<Messaging />} />
 				<Route path="/host" element={<HostProfile />} />
+				<Route path="/add-place" element={<AddPlace />} />
+				<Route path="/add-numbers" element={<AddNumbers />} />
+				<Route path="/add-photos" element={<AddPhotos />} />
+				<Route path="/add-title" element={<AddTitle />} />
+				<Route path="/add-description" element={<AddDescription />} />
+				<Route path="/equipment" element={<Equipment />} />
 				<Route path="/*" element={<NotFound />} />
 			</Routes>
 		</div>
