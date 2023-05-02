@@ -6,7 +6,7 @@ import user4 from "../images/user4.png";
 const fakeComments = [
 	{
 		writerImg: user1,
-		writerName: "Jane",
+		writerName: "Emeraude",
 		date: "May 2020",
 		content:
 			"Jane est un hôte accueillant qui est à l’écoute et qui laisse également de l’indépendance et de la tranquillité aux invités.",
