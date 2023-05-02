@@ -1,0 +1,39 @@
+* {
+	box-sizing: border-box;
+}
+
+.container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+}
+
+.item {
+	border-radius: 15px;
+	height: 100px;
+	border: 1px solid rgba(gray, 0.2);
+	padding: 15px 10px 10px 40px;
+	font-size: 20px;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+
+	p {
+		font-size: 16px !important;
+	}
+	&:hover {
+		border: 2px solid black;
+	}
+
+	&:active {
+		transform: scale(0.93);
+	}
+
+	&.selected {
+		border: 2px solid black !important;
+		background-color: darken(white, 5%);
+	}
+}
+
+.plus {
+	margin: 50px 0;
+}
