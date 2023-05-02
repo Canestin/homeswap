@@ -12,6 +12,7 @@ import Equipment from "./pages/Equipment/Equipment";
 import AddPhotos from "./pages/AddPhotos/AddPhotos";
 import AddTitle from "./pages/AddTitle/AddTitle";
 import AddDescription from "./pages/AddDescription/AddDescription";
+import Publish from "./pages/Publish/Publish";
 
 function App() {
 	const { pathname } = useLocation();
@@ -34,6 +35,7 @@ function App() {
 				<Route path="/add-title" element={<AddTitle />} />
 				<Route path="/add-description" element={<AddDescription />} />
 				<Route path="/equipment" element={<Equipment />} />
+				<Route path="/publish" element={<Publish />} />
 				<Route path="/*" element={<NotFound />} />
 			</Routes>
 		</div>
