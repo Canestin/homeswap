@@ -10,7 +10,7 @@ const description = "Tout a été configuré, sautons le grand pas !";
 function Publish() {
 	return (
 		<div>
-			<AddLayout title={title} description={description}>
+			<AddLayout title={title} description={description} level={7}>
 				<div className={styles.content}>
 					<Post
 						img={post1}

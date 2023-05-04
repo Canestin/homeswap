@@ -1,20 +1,20 @@
-import React, { useRef, useState } from "react";
-import styles from "./HostProfile.module.scss";
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
+import React, { useState } from "react";
+import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 import {
+	IoCheckmarkOutline,
 	IoLanguageOutline,
 	IoLocationOutline,
-	IoCheckmarkOutline,
 } from "react-icons/io5";
 import { VscVerified } from "react-icons/vsc";
-import { GrFormPrevious, GrFormNext } from "react-icons/gr";
 import Comment from "../../components/Comment/Comment";
-import fakeComments from "../../data/FakeComments";
-import meImg from "../../images/me.png";
-import SeeMoreButton from "../../components/SeeMoreButton/SeeMoreButton";
-import { fakePosts } from "../../data/FakePosts";
+import Footer from "../../components/Footer/Footer";
+import Header from "../../components/Header/Header";
 import Post from "../../components/Post/Post";
+import SeeMoreButton from "../../components/SeeMoreButton/SeeMoreButton";
+import fakeComments from "../../data/FakeComments";
+import { fakePosts } from "../../data/FakePosts";
+import meImg from "../../images/me.png";
+import styles from "./HostProfile.module.scss";
 
 function HostProfile() {
 	const [scroll, setScroll] = useState(0);

@@ -24,7 +24,7 @@ function Equipment() {
 
 	return (
 		<div>
-			<AddLayout title={title} description={description}>
+			<AddLayout title={title} description={description} level={3}>
 				<div className={styles.container}>
 					<div
 						onClick={() => setEquipmentList((l) => [...l, "wifi"])}

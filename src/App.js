@@ -13,6 +13,7 @@ import AddPhotos from "./pages/AddPhotos/AddPhotos";
 import AddTitle from "./pages/AddTitle/AddTitle";
 import AddDescription from "./pages/AddDescription/AddDescription";
 import Publish from "./pages/Publish/Publish";
+import AddType from "./pages/AddType/AddType";
 
 function App() {
 	const { pathname } = useLocation();
@@ -29,12 +30,13 @@ function App() {
 				<Route path="/house-details" element={<HouseDetails />} />
 				<Route path="/messaging" element={<Messaging />} />
 				<Route path="/host" element={<HostProfile />} />
+				<Route path="/add-type" element={<AddType />} />
 				<Route path="/add-place" element={<AddPlace />} />
 				<Route path="/add-numbers" element={<AddNumbers />} />
+				<Route path="/equipment" element={<Equipment />} />
 				<Route path="/add-photos" element={<AddPhotos />} />
 				<Route path="/add-title" element={<AddTitle />} />
 				<Route path="/add-description" element={<AddDescription />} />
-				<Route path="/equipment" element={<Equipment />} />
 				<Route path="/publish" element={<Publish />} />
 				<Route path="/*" element={<NotFound />} />
 			</Routes>
