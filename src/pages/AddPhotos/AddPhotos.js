@@ -17,7 +17,7 @@ function AddPhotos() {
 
 	return (
 		<div>
-			<AddLayout title={title} description={description}>
+			<AddLayout title={title} description={description} level={4}>
 				<div className={styles.container}>
 					<div
 						onClick={() => {

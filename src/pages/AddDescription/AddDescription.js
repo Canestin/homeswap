@@ -16,7 +16,7 @@ function AddDescription() {
 
 	return (
 		<div>
-			<AddLayout title={title} description={description}>
+			<AddLayout title={title} description={description} level={6}>
 				<textarea
 					className={`${styles.textarea} ${
 						textLength > DESC_LENGTH_LIMIT && styles.alert

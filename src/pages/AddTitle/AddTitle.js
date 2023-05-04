@@ -14,7 +14,7 @@ function AddTitle() {
 
 	return (
 		<div>
-			<AddLayout title={title} description={description}>
+			<AddLayout title={title} description={description} level={5}>
 				<textarea
 					className={`${styles.textarea} ${
 						textLength > TITLE_LENGTH_LIMIT && styles.alert

@@ -5,7 +5,7 @@
 	height: 100vh;
 	width: 100vw;
 	display: grid;
-	grid-template-rows: 80px 1fr 80px;
+	grid-template-rows: 80px 1fr 90px;
 }
 
 .top {
@@ -27,13 +27,24 @@
 }
 
 .bottom {
-	@extend .top;
-	border-top: 1px solid rgba(gray, 0.2);
+	display: flex;
+	flex-direction: column;
 
-	> span {
-		cursor: pointer;
-		&:hover {
-			background-color: rgba(gray, 0.2);
+	.bottom__level__container {
+		height: 5px;
+		display: grid;
+		grid-template-columns: repeat(7, 1fr);
+		gap: 5px;
+	}
+	.bottom__action__container {
+		flex: 1;
+		@extend .top;
+
+		> span {
+			cursor: pointer;
+			&:hover {
+				background-color: rgba(gray, 0.2);
+			}
 		}
 	}
 }
@@ -54,4 +65,8 @@
 		font-size: 18px;
 		color: gray;
 	}
+}
+
+.isNotVisible {
+	visibility: hidden;
 }

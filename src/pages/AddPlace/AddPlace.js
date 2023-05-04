@@ -117,7 +117,7 @@ function AddPlace() {
 
 	return (
 		<div>
-			<AddLayout title={title} description={description}>
+			<AddLayout title={title} description={description} level={1}>
 				<div className={styles.input}>
 					{showCountryLabel && <span>Country</span>}
 					<input

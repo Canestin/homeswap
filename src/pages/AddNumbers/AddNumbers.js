@@ -15,7 +15,7 @@ function AddNumbers() {
 
 	return (
 		<div>
-			<AddLayout title={title} description={description}>
+			<AddLayout title={title} description={description} level={2}>
 				<div className={styles.item}>
 					<span>Travelers</span>
 					<div>
