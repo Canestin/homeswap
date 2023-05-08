@@ -1,4 +1,4 @@
-# HomeSwap: Software Engineering Project as part of the apprenticeship at ISEP
+# HomeSwap
 
 ## Getting Started with Create React App
 
