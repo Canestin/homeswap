@@ -3,9 +3,8 @@ import styles from "./AddNumbers.module.scss";
 import AddLayout from "../../components/AddLayout/AddLayout";
 import { BiPlus, BiMinus } from "react-icons/bi";
 
-const title = "Les détails sur le nombre de places";
-const description =
-  "Donnez les informations principales concernant votre logement.";
+const title = "Details on the number of places";
+const description = "Give the main information about your accommodation.";
 
 function AddNumbers() {
   const [travelers, setTravelers] = useState(0);

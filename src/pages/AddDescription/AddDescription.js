@@ -3,14 +3,14 @@ import styles from "./AddDescription.module.scss";
 import AddLayout from "../../components/AddLayout/AddLayout";
 import { BiInfoCircle } from "react-icons/bi";
 
-const title = "Créez votre description";
-const description = "Racontez ce qui rend votre logement unique.";
+const title = "Create your description";
+const description = "Share what makes your home unique.";
 
 const DESC_LENGTH_LIMIT = 500;
 
 function AddDescription() {
   const [desc, setDesc] = useState(
-    "Passez un agréable séjour dans cet hébergement confortable."
+    "Have a pleasant stay in this comfortable accommodation."
   );
   const [textLength, setTextLength] = useState(0);
 

@@ -78,11 +78,9 @@ function AddLayout({ children, title, description, level }) {
             onClick={handlePrev}
             className={level === 7 && styles.isNotVisible}
           >
-            Retour
+            Back
           </span>
-          <span onClick={handleNext}>
-            {level === 7 ? "Publier" : "Suivant"}
-          </span>
+          <span onClick={handleNext}>{level === 7 ? "Publish" : "Next"}</span>
         </div>
       </div>
     </div>

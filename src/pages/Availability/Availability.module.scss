@@ -21,11 +21,12 @@
 	animation: rotate 0.4s linear infinite;
 }
 
-.post {
+.posts {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	row-gap: 5px;
-	column-gap: 20px;
+	column-gap: 25px;
+	row-gap: 60px;
 }
 
 .onePost {

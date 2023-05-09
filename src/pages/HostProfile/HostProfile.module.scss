@@ -58,10 +58,8 @@
 		margin-bottom: 10px;
 	}
 
-	> div {
-		display: inline-flex;
-		align-items: center;
-		gap: 5px;
+	span {
+		color: var(--red-bright-color);
 	}
 }
 

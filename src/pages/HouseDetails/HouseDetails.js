@@ -33,12 +33,12 @@ function HouseDetails() {
           <div>
             <img src={posts[2]} alt="image_1" />
           </div>
-          {/* <div>
-						<img src={posts[3]} alt="image_1" />
-					</div>
-					<div>
-						<img src={posts[4]} alt="image_1" />
-					</div> */}
+          <div>
+            <img src={posts[3]} alt="image_1" />
+          </div>
+          <div>
+            <img src={posts[4]} alt="image_1" />
+          </div>
         </div>
       </div>
 
@@ -46,39 +46,39 @@ function HouseDetails() {
         <div className={styles.infos_host}>
           <div className={styles.infos_host_title}>
             <div>
-              <h1>Logement entier : Chez Jane</h1>
-              <span>8 voyageurs • 4 chambres • 4 lits • 2 salles de bain</span>
+              <h1>Entire accommodation: Chez Jane</h1>
+              <span>8 travelers • 4 bedrooms • 4 beds • 2 bathrooms</span>
             </div>
             <img src={host_img} alt="host profile img" />
           </div>
           <p>
-            Maison de pêcheur rénovée entre St Malo et Dinard, la propriété
-            accueille 8/10 personnes dans une ambiance chaleureuse. Grand
-            salon/séjour avec cuisine équipée, 4 chambres (lit de 160),
-            lingerie, 2 salles d’eau et wc sépare. Cheminee et decoration cosi
-            pour réchauffer vos soirées. Pour des vacances en famille ou entre
-            amis, vous avez un accès direct à la Rance pour des balades et
-            baignade inoubliables. Venez vous détendre sous le saule et profitez
-            de la Côte d Emeraude...
+            Renovated fisherman's house between St Malo and Dinard, the property
+            accommodates 8/10 people in a warm atmosphere. Large living
+            room/living room with fitted kitchen, 4 bedrooms (160 bed), linen
+            room, 2 shower rooms and separate toilet. Fireplace and cozy
+            decoration to warm up your evenings. For holidays with family or
+            friends, you have direct access to the Rance for unforgettable walks
+            and swimming. Come and relax under the willow and enjoy the Emerald
+            Coast...
           </p>
-          <p className={styles.see_more}>En savoir plus</p>
+          <p className={styles.see_more}>Learn more</p>
 
           <div className={styles.acc_offers}>
-            <h2>Ce que propose ce logement</h2>
+            <h2>What this accommodation offers</h2>
 
             <ul>
               <li>Wifi</li>
-              <li>Cuisine</li>
-              <li>Chauffage</li>
+              <li>Food</li>
+              <li>Heating</li>
               <li>TV</li>
-              <li>Machine à laver</li>
-              <li>Cheminée</li>
+              <li>Washing machine</li>
+              <li>Chimney</li>
               <li>Barbecue</li>
-              <li>Table à langer</li>
-              <li>Chaise haute</li>
-              <li>Table à langer</li>
-              <li>Chaise haute</li>
-              <li>Table à langer</li>
+              <li>Dinner table</li>
+              <li>High chair</li>
+              <li>Dinner table</li>
+              <li>High chair</li>
+              <li>Dinner table</li>
             </ul>
 
             <SeeMoreButton text="Afficher les 20 équipements" />
@@ -86,7 +86,7 @@ function HouseDetails() {
         </div>
 
         <div className={styles.infos_book}>
-          <span>Ajoutez des dates pour voir le prix</span>
+          <span>Add dates to see the price</span>
 
           <div className={styles.meta_infos}>
             <img src={star} alt="star" />
@@ -96,20 +96,20 @@ function HouseDetails() {
 
           <div className={styles.infos_context}>
             <div>
-              <span>ARRIVÉE</span>
+              <span>ARRIVAL</span>
               <span>22/05/2023</span>
             </div>
             <div>
-              <span>DÉPART</span>
+              <span>DEPARTURE</span>
               <span>29/05/2023</span>
             </div>
             <div>
-              <span>VOYAGEURS</span>
-              <span>1 voyageur</span>
+              <span>TRAVELERS</span>
+              <span>1 Traveler</span>
             </div>
           </div>
 
-          <div className={styles.context_reserv}>Réserver</div>
+          <div className={styles.context_reserv}>Book</div>
         </div>
       </div>
 
@@ -122,7 +122,7 @@ function HouseDetails() {
 
         <div className={styles.comments_notes}>
           <div>
-            <span>Propreté</span>
+            <span>Cleanliness</span>
             <CommentBar note={4.7} />
           </div>
           <div>
@@ -130,11 +130,11 @@ function HouseDetails() {
             <CommentBar note={2.8} />
           </div>
           <div>
-            <span>Précision</span>
+            <span>Accuracy</span>
             <CommentBar note={4.1} />
           </div>
           <div>
-            <span>Emplacement</span>
+            <span>Location</span>
             <CommentBar note={4.9} />
           </div>
         </div>
@@ -150,7 +150,7 @@ function HouseDetails() {
             />
           ))}
         </div>
-        <SeeMoreButton text="Afficher plus de commentaires" />
+        <SeeMoreButton text="Show more comments" />
       </div>
 
       <Footer />

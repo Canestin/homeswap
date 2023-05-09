@@ -16,14 +16,15 @@ export default function Header() {
           <li onClick={() => navigate("/house-details")}>House Details</li>
           <li onClick={() => navigate("/host")}>Host</li>
           <li onClick={() => navigate("/messaging")}>Messaging</li>
-          <li onClick={() => navigate("/add-place")}>Register Accommodation</li>
           {/* <li onClick={() => navigate("/about")}>About</li>
 					<li onClick={() => navigate("/contact")}>Contact</li> */}
         </ul>
       </div>
       <div className={styles.right}>
-        <span className={styles.putAcc}>List my property on HomeSwap</span>
-        <BiUserCircle cursor="pointer" color={Colors.red} size={40} />
+        <span onClick={() => navigate("/add-place")} className={styles.putAcc}>
+          List my property on HomeSwap
+        </span>
+        <BiUserCircle cursor="pointer" color={Colors.blue} size={40} />
       </div>
     </div>
   );

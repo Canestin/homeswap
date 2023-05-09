@@ -4,35 +4,35 @@ import user3 from "../images/user3.png";
 import user4 from "../images/user4.png";
 
 const fakeComments = [
-	{
-		writerImg: user1,
-		writerName: "Emeraude",
-		date: "May 2020",
-		content:
-			"Jane est un hôte accueillant qui est à l’écoute et qui laisse également de l’indépendance et de la tranquillité aux invités.",
-	},
-	{
-		writerImg: user2,
-		writerName: "John",
-		date: "April 2020",
-		content:
-			"Très belle maison restaurée avec beaucoup de goût. Superbe environnement. Belle région. Excellent accueil de Jane et en plus réactivité +++",
-	},
+  {
+    writerImg: user1,
+    writerName: "Emeraude",
+    date: "May 2020",
+    content:
+      "Jane is a welcoming host who listens and also leaves independence and tranquility to guests.",
+  },
+  {
+    writerImg: user2,
+    writerName: "John",
+    date: "April 2020",
+    content:
+      "Very nice house restored with great taste. Superb environment. Beautiful area. Excellent welcome from Jane and more responsiveness +++",
+  },
 
-	{
-		writerImg: user3,
-		writerName: "Benjamin",
-		date: "March 2021",
-		content:
-			"Nous avons particulièrement aimé l'ambiance conviviale et les beaux espaces de la maison. La description de la demeure est en tout point conforme à la réalité. Nous avons passé un très bon séjour en famille.",
-	},
-	{
-		writerImg: user4,
-		writerName: "Emma",
-		date: "February 2022",
-		content:
-			"Excellent emplacement pour ce magnifique logement très très agréable! On a tout aimé: bravo!",
-	},
+  {
+    writerImg: user3,
+    writerName: "Benjamin",
+    date: "March 2021",
+    content:
+      "We particularly liked the friendly atmosphere and the beautiful spaces of the house. The description of the house is in all respects consistent with reality. We had a great family vacation.",
+  },
+  {
+    writerImg: user4,
+    writerName: "Emma",
+    date: "February 2022",
+    content:
+      "Excellent location for this magnificent accommodation very very pleasant! We liked everything: well done!",
+  },
 ];
 
 export default fakeComments;
