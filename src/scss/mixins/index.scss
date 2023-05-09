@@ -21,3 +21,11 @@ $small: 479px;
         @content;
     }	
 }
+
+
+@media screen and ($max: $large) {
+    
+   body {
+        opacity: 0;
+    }
+}
