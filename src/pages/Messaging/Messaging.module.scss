@@ -1,6 +1,6 @@
-* {
-	box-sizing: border-box;
-}
+@import url("../../constants/_variables.scss");
+@import '../../scss/tools.scss';
+
 
 ::-webkit-scrollbar {
 	width: 1px;

@@ -1,8 +1,7 @@
 @import url("../../constants/_variables.scss");
+@import '../../scss/tools.scss';
 
-* {
-	box-sizing: border-box;
-}
+
 .container {
 	padding-top: 70px;
 }
@@ -70,11 +69,12 @@
 	color: white;
 }
 .comments {
-	/* background-color: aqua; */
-	padding: 0 120px;
-	display: flex;
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+	place-content: center;
+	padding: 0 10%;
 	justify-content: space-evenly;
-	gap: 80px;
+	gap: 30px;
 	margin-bottom: 30px;
 }
 
@@ -82,22 +82,32 @@
 	background-color: var(--blue-color-opacity);
 	display: grid;
 	grid-template-rows: auto auto 1fr;
+	place-content: center;
 	border-radius: 20px;
 	padding: 10px 30px;
 	color: var(--black-color);
-}
+	gap: 20px;
 
-.oneComment > img {
-	width: 70px;
-	height: 70px;
-	border-radius: 50%;
-	align-self: center;
-	justify-self: center;
-	/* background-color: aliceblue; */
-}
+	> img {
+		width: 70px;
+		height: 70px;
+		border-radius: 50%;
+		align-self: center;
+		justify-self: center;
+	}
 
-.cityComment > span:first-child {
-	font-weight: bold;
+	p {
+		font-size: 16px;
+		text-align: center;
+
+	}
+ > div {
+	align-self: flex-end;
+
+ }
+	> div > span:first-child {
+		font-weight: bold;
+	}
 }
 
 .whyUsContainer {
@@ -111,7 +121,7 @@
 
 .features {
 	display: grid;
-	grid-template-columns: repeat(3, 20%);
+	grid-template-columns: repeat(3, calc(25% - 10px));
 	justify-content: center;
 	gap: 10px;
 }
@@ -120,19 +130,27 @@
 	display: grid;
 	grid-template-rows: auto auto auto;
 	border-radius: 20px;
-	padding: 0 30px;
 	color: var(--black-color);
-}
+	row-gap: 30px;
+	padding: 0 30px;
 
-.OneFeature > img {
+   > img {
 	width: 100px;
 	height: 100px;
 	border-radius: 50%;
 	justify-self: center;
-}
+   }
 
-.OneFeature > h3 {
-	text-align: center;
+	> h3{
+		text-align: center;
+	}
+
+	>  p {
+		flex: 1;
+		font-size: 16px;
+		margin: auto;
+		text-align: center;
+	}
 }
 
 .textWhy {
@@ -142,14 +160,15 @@
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-}
-.textWhy p {
-	font-size: 20px;
-	max-width: 30%;
-}
 
-.textFeature {
-	text-align: center;
+	> h1 {
+		margin-bottom: 40px;
+	}
+	> p {
+		font-size: 20px;
+		max-width: 40%;
+		margin-bottom: 40px;
+	}
 }
 
 .postsContainer {
@@ -167,7 +186,4 @@
 	justify-content: space-evenly;
 	padding: 0 60px;
 	gap: 15px;
-}
-
-@media only screen and (max-width: 1024px) {
 }
