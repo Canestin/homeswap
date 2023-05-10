@@ -131,7 +131,7 @@ function HostProfile() {
             </div>
           </div>
 
-          <SeeMoreButton text="Afficher plus de commentaires" />
+          <SeeMoreButton text="Show more comments" />
 
           <div className={styles.right_posts}>
             <h2>Announcements posted by Jane</h2>
