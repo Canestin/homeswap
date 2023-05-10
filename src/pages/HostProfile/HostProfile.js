@@ -5,7 +5,6 @@ import {
   IoLanguageOutline,
   IoLocationOutline,
 } from "react-icons/io5";
-import { VscVerified } from "react-icons/vsc";
 import Comment from "../../components/Comment/Comment";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
