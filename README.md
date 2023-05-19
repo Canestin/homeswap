@@ -1,5 +1,9 @@
 # HomeSwap
 
+<div style="margin-bottom: 30px;" align="center">
+<img src="https://raw.githubusercontent.com/Canestin/assets/main/img/homeswap.png" alt="Logo BreakFood"  width="300">
+</div>
+
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
