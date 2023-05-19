@@ -1,0 +1,189 @@
+@import url("../../constants/_variables.scss");
+@import '../../scss/tools.scss';
+
+
+.container {
+	padding-top: 70px;
+}
+
+.top {
+	position: relative;
+	height: calc(100vh - 70px);
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+}
+
+.top img {
+	height: 80%;
+	width: 90%;
+	object-fit: cover;
+	border-radius: 30px;
+	margin: 50px auto;
+}
+
+.topText {
+	position: absolute;
+	top: 15%;
+	left: 200px;
+	max-width: 40%;
+}
+
+.topText p:first-child {
+	font-size: 60px;
+	font-weight: bold;
+}
+
+.topText p:last-child {
+	font-size: 30px;
+}
+
+.topSearch {
+	position: absolute;
+	top: 80%;
+}
+
+.commentsContainer {
+	width: 100vw;
+	background-color: var(--red-bright-color);
+	display: grid;
+	grid-template-rows: auto auto 50px;
+	gap: 50px;
+	padding: 100px 0;
+}
+.commentsContainer > h1 {
+	text-align: center;
+	color: white;
+}
+
+.commentsContainer > div:last-child {
+	width: 30%;
+	justify-self: center;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--blue-color);
+	font-size: large;
+	font-weight: bold;
+	color: white;
+}
+.comments {
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+	place-content: center;
+	padding: 0 10%;
+	justify-content: space-evenly;
+	gap: 30px;
+	margin-bottom: 30px;
+}
+
+.oneComment {
+	background-color: var(--blue-color-opacity);
+	display: grid;
+	grid-template-rows: auto auto 1fr;
+	place-content: center;
+	border-radius: 20px;
+	padding: 10px 30px;
+	color: var(--black-color);
+	gap: 20px;
+
+	> img {
+		width: 70px;
+		height: 70px;
+		border-radius: 50%;
+		align-self: center;
+		justify-self: center;
+	}
+
+	p {
+		font-size: 16px;
+		text-align: center;
+
+	}
+ > div {
+	align-self: flex-end;
+
+ }
+	> div > span:first-child {
+		font-weight: bold;
+	}
+}
+
+.whyUsContainer {
+	width: 100%;
+	background-color: var(--gray-opacity-color);
+	display: grid;
+	grid-template-rows: auto auto;
+	gap: 30px;
+	padding: 50px;
+}
+
+.features {
+	display: grid;
+	grid-template-columns: repeat(3, calc(25% - 10px));
+	justify-content: center;
+	gap: 10px;
+}
+
+.OneFeature {
+	display: grid;
+	grid-template-rows: auto auto auto;
+	border-radius: 20px;
+	color: var(--black-color);
+	row-gap: 30px;
+	padding: 0 30px;
+
+   > img {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	justify-self: center;
+   }
+
+	> h3{
+		text-align: center;
+	}
+
+	>  p {
+		flex: 1;
+		font-size: 16px;
+		margin: auto;
+		text-align: center;
+	}
+}
+
+.textWhy {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+
+	> h1 {
+		margin-bottom: 40px;
+	}
+	> p {
+		font-size: 20px;
+		max-width: 40%;
+		margin-bottom: 40px;
+	}
+}
+
+.postsContainer {
+	margin-top: 100px;
+}
+
+.postsContainer h1 {
+	text-align: center;
+	margin: 80px 0 50px;
+}
+
+.posts {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	justify-content: space-evenly;
+	padding: 0 60px;
+	gap: 15px;
+}

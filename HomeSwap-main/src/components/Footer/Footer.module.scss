@@ -1,0 +1,95 @@
+@import url("../../constants/_variables.scss");
+@import '../../scss/tools.scss';
+
+* {
+	box-sizing: border-box;
+}
+.container {
+	width: 100vw;
+	background-color: var(--gray-opacity-color);
+	margin-top: 80px;
+	padding: 40px 100px;
+	margin-bottom: 0;
+}
+
+.content {
+	padding: 50px 0;
+	display: grid;
+	grid-template-columns: repeat(3, 3fr) 4fr;
+	border-top: 1px solid var(--gray-color);
+	border-bottom: 1px solid var(--gray-color);
+}
+
+.content > div {
+	margin: 2px;
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+}
+
+.sendEmail {
+	width: 70%;
+	height: 40px;
+	border: none;
+	border: 2px solid var(--red-color);
+	padding-left: 10px;
+	border-radius: 10px;
+	display: grid;
+	grid-template-columns: 1fr 40px;
+}
+
+.sendEmail > input {
+	height: 40px;
+	outline: none;
+	border: none;
+	background-color: transparent;
+	font-size: 16px;
+	padding-right: 10px;
+}
+
+.sendEmail > div {
+	/* width: 100%; */
+	height: 38px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--red-color);
+	border-radius: 0 5px 8px 0;
+	cursor: pointer;
+}
+
+.sendEmail img {
+	width: 30px;
+	height: 30px;
+}
+
+.bottom {
+	padding: 30px 0;
+	margin-top: 20px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.bottom > div {
+	display: flex;
+	gap: 10px;
+}
+
+.bottom > div > div {
+	width: 30px;
+	height: 30px;
+	margin: 1px;
+	background-color: var(--blue-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	gap: 20px;
+	border-radius: 50%;
+	color: white;
+	cursor: pointer;
+}
+
+.bottom > div > div:hover {
+	transform: scale(1.1);
+}

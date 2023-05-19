@@ -1,0 +1,72 @@
+@import url("../../constants/_variables.scss");
+@import '../../scss/tools.scss';
+
+.container {
+	width: 100vw;
+	height: 70px;
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid var(--gray-text);
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: #fff;
+	z-index: 999;
+}
+
+.container li,
+.container img {
+	cursor: pointer;
+}
+
+.left {
+	display: flex;
+	align-items: center;
+	margin-right: 30px;
+	gap: 100px;
+}
+
+.left img {
+	height: 70px;
+	margin-left: 50px;
+}
+
+.left ul {
+	display: flex;
+	flex-direction: row;
+	list-style: none;
+	gap: 10px;
+	font-size: 16px;
+	font-weight: 500;
+
+	li {
+		padding: 5px 10px;
+		border-radius: 5px;
+
+		&:hover {
+			background-color: var(--gray-opacity-color);
+		}
+	}
+}
+
+.right {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	margin-right: 30px;
+}
+
+.putAcc {
+	margin-right: 30px;
+	border-radius: 30px;
+	padding: 7px 15px;
+	background-color: var(--blue-color);
+	color: #fff;
+	cursor: pointer;
+}
+.putAcc:hover {
+	opacity: 0.8;
+}
+
+@media only screen and (max-width: 1024px) {
+}

@@ -1,0 +1,31 @@
+$min: min-width;
+$max: max-width;
+
+$large: 1024px;
+$medium: 768px;
+$small: 479px;
+
+@mixin large() {
+    @media screen and ($min: $large) {
+        @content;
+      }
+	
+}
+@mixin medium() {
+    @media screen and ($min: $large) {
+        @content;
+	}
+}
+@mixin small() {
+    @media screen and ($min: $large) {
+        @content;
+    }	
+}
+
+
+@media screen and ($max: $large) {
+    
+   body {
+        opacity: 0;
+    }
+}
