@@ -24,7 +24,8 @@ export default function Header() {
         <span onClick={() => navigate("/add-place")} className={styles.putAcc}>
           List my property on HomeSwap
         </span>
-        <BiUserCircle cursor="pointer" color={Colors.blue} size={40} />
+        <BiUserCircle onClick={() => navigate("/signup")} cursor="pointer" color={Colors.blue} size={40} />
+        <BiUserCircle onClick={() => navigate("/Login")} cursor="pointer" color={Colors.blue} size={40} />
       </div>
     </div>
   );

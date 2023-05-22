@@ -1,0 +1,72 @@
+.return {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+}
+.h1{
+  font-family: 'Montserrat';
+font-style: normal;
+font-weight: 700;
+font-size: 48px;
+line-height: 59px;
+text-align: center;
+color: #262729;
+}
+
+form {
+  box-sizing: border-box;
+  position: absolute;
+  width: 700px;
+  height: 438px;
+  left: 219px;
+  top: 277px;
+  background: #FFFFFF;
+  border: 1px solid #E7E6EB;
+  border-radius: 12px;
+
+}
+
+.container {
+  padding: 16px;
+  background-color: white;
+}
+
+input[type=text],
+input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus,
+input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+.Loginbtn {
+  background: #EE685F;
+  padding: 14px 20px;
+  cursor: pointer;
+  height: 50px;
+  width: 641px;
+  left: 255px;
+  top: 568px;
+  border-radius: 10px;
+}
+
+a {
+  color: dodgerblue;
+}
+
+.SignUp {
+  background-color: #f1f1f1;
+  text-align: center;
+}
