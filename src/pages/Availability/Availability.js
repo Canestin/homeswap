@@ -3,14 +3,24 @@ import styles from "./Availability.module.scss";
 import Header from "../../components/Header/Header";
 // import Footer from "../../components/Footer/Footer";
 import Post from "../../components/Post/Post";
-import { duplicatePosts } from "../../data/FakePosts";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import Search from "../../components/Search/Search";
+import axios from "axios";
 
+const API_URL = "http://localhost:8080";
 function Availability() {
-  const [posts, setposts] = useState(duplicatePosts);
+  const [posts, setposts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
+
+  useEffect(() => {
+    const getPosts = async () => {
+      const res = await axios.get(`${API_URL}/housing/`);
+      setposts(res.data);
+    };
+
+    getPosts();
+  }, []);
   useEffect(() => {
     function handleScroll() {
       const scrollPosition =
@@ -29,12 +39,15 @@ function Availability() {
   }, [page]);
 
   useEffect(() => {
-    setLoading(true);
+    if (page > 1) {
+      setLoading(true);
 
-    setTimeout(() => {
-      setposts(duplicatePosts.concat(posts));
-      setLoading(false);
-    }, 1000);
+      setTimeout(() => {
+        setposts(posts.concat(posts));
+        setLoading(false);
+      }, 1000);
+    }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page]);
 
@@ -50,8 +63,8 @@ function Availability() {
           {posts.map((post, id) => (
             <Post
               key={id}
-              img={post.img}
-              location={post.location}
+              img={post.photo_one}
+              location={[post.city, post.country]}
               dates={post.dates}
               rating={post.rating}
               style={styles.onePost}

@@ -6,7 +6,7 @@ import { BiInfoCircle } from "react-icons/bi";
 const title = "Create your description";
 const description = "Share what makes your home unique.";
 
-const DESC_LENGTH_LIMIT = 500;
+const DESC_LENGTH_LIMIT = 700;
 
 function AddDescription() {
   const [desc, setDesc] = useState(
