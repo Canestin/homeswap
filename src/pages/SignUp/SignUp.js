@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Header from "../../components/Header/Header";
 import styles from "./SignUp.module.scss";
+import { useNavigate } from "react-router-dom";
 
 const SignupForm = () => {
   const [firstName, setFirstName] = useState("");
@@ -8,6 +9,8 @@ const SignupForm = () => {
   const [emailAddress, setEmailAddress] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,13 +21,13 @@ const SignupForm = () => {
     <>
       <Header />
       <div className={styles.container}>
-        <h2>Sign Up</h2>
-        <h4>And make your home profitable</h4>
+        <h1>Sign Up</h1>
+        <h3>And make your home profitable</h3>
 
         <div>
           <form className={styles.signupForm} onSubmit={handleSubmit}>
             <div className={styles.formGroup}>
-              <label htmlFor="firstname">First Name:</label>
+              <label htmlFor="firstname">Firstname</label>
               <input
                 type="text"
                 id="firstname"
@@ -34,7 +37,7 @@ const SignupForm = () => {
               />
             </div>
             <div className={styles.formGroup}>
-              <label htmlFor="lastname">Last Name:</label>
+              <label htmlFor="lastname">Lastname</label>
               <input
                 type="text"
                 id="lastname"
@@ -44,7 +47,7 @@ const SignupForm = () => {
               />
             </div>
             <div className={styles.formGroup}>
-              <label htmlFor="email">Email Address:</label>
+              <label htmlFor="email">Email</label>
               <input
                 type="email"
                 id="email"
@@ -54,7 +57,7 @@ const SignupForm = () => {
               />
             </div>
             <div className={styles.formGroup}>
-              <label htmlFor="password">Password:</label>
+              <label htmlFor="password">Password</label>
               <input
                 type="password"
                 id="password"
@@ -64,7 +67,7 @@ const SignupForm = () => {
               />
             </div>
             <div className={styles.formGroup}>
-              <label htmlFor="confirmPassword">Confirm Password:</label>
+              <label htmlFor="confirmPassword">Confirm Password</label>
               <input
                 type="password"
                 id="confirmPassword"
@@ -73,6 +76,17 @@ const SignupForm = () => {
                 required
               />
             </div>
+            <span>Already an account ?</span>{" "}
+            <span
+              style={{
+                color: "#006bb7",
+                fontWeight: "bold",
+                cursor: "pointer",
+              }}
+              onClick={() => navigate("/signin")}
+            >
+              Sign In
+            </span>
             <button type="submit">Sign Up</button>
           </form>
         </div>
