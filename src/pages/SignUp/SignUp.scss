@@ -1,0 +1,51 @@
+.body
+{
+    font-family: 'Montserrat';
+}
+.signup-form {
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    height: max-content;
+  }
+  
+  .signup-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .signup-form .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .signup-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .signup-form input[type="text"],
+  .signup-form input[type="email"],
+  .signup-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #D6D6D6;
+    border-radius: 4px;
+  }
+  
+  .signup-form button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #EE685F;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .signup-form button[type="submit"]:hover {
+    background-color:#EE685F;
+  }
+  

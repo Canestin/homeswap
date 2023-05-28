@@ -14,7 +14,8 @@ import AddTitle from "./pages/AddTitle/AddTitle";
 import AddDescription from "./pages/AddDescription/AddDescription";
 import Publish from "./pages/Publish/Publish";
 import AddType from "./pages/AddType/AddType";
-
+import SignupForm from "./pages/SignUp/SignUp";
+import LoginForm from "./pages/LogIn/Login";
 function App() {
 	const { pathname } = useLocation();
 
@@ -38,10 +39,11 @@ function App() {
 				<Route path="/add-title" element={<AddTitle />} />
 				<Route path="/add-description" element={<AddDescription />} />
 				<Route path="/publish" element={<Publish />} />
+				<Route path="/signup" element={<SignupForm />} />
+				<Route path="/Login" element={<LoginForm />} />
 				<Route path="/*" element={<NotFound />} />
 			</Routes>
 		</div>
 	);
 }
-
 export default App;
