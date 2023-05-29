@@ -14,6 +14,7 @@ const Datatable = () => {
   const actionColumn = [
     {
       field: "action",
+      first: "njfhf",
       headerName: "Action",
       width: 200,
       renderCell: (params) => {
