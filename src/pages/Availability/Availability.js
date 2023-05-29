@@ -5,21 +5,20 @@ import Header from "../../components/Header/Header";
 import Post from "../../components/Post/Post";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import Search from "../../components/Search/Search";
-import axios from "axios";
+import { getHouses } from "../../routes/housing";
 
-const API_URL = "http://localhost:8080";
 function Availability() {
   const [posts, setposts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
 
   useEffect(() => {
-    const getPosts = async () => {
-      const res = await axios.get(`${API_URL}/housing/`);
-      setposts(res.data);
+    const fetchPosts = async () => {
+      const posts = await getHouses();
+      setposts(posts);
     };
 
-    getPosts();
+    fetchPosts();
   }, []);
   useEffect(() => {
     function handleScroll() {
@@ -68,6 +67,7 @@ function Availability() {
               dates={post.dates}
               rating={post.rating}
               style={styles.onePost}
+              id={post.id}
             />
           ))}
         </div>

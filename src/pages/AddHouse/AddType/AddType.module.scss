@@ -1,0 +1,42 @@
+@import "../../../scss/tools.scss";
+
+.item {
+  height: 100px;
+  display: grid;
+  grid-template-columns: 1fr 50px;
+  place-content: space-between;
+  align-items: center;
+  border: 1px solid rgba(gray, 0.2);
+  border-radius: 20px;
+  margin-bottom: 15px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:active {
+    scale: 0.9;
+  }
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 80px;
+    justify-content: center;
+
+    > p {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    > span {
+      color: gray;
+    }
+  }
+}
+
+.selected {
+  background-color: rgb(241, 241, 241);
+  border: 2px solid black;
+}

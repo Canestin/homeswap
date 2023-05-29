@@ -16,7 +16,6 @@ import Publish from "./pages/AddHouse/Publish/Publish";
 import AddType from "./pages/AddHouse/AddType/AddType";
 import SignupForm from "./pages/SignUp/SignUp";
 import SignIn from "./pages/SignIn/SignIn";
-import Admin from "./pages/Admin/Admin";
 import AddHouse from "./pages/AddHouse/AddHouse";
 function App() {
   const { pathname } = useLocation();
@@ -35,7 +34,6 @@ function App() {
         <Route path="/host" element={<HostProfile />} />
         <Route path="/signup" element={<SignupForm />} />
         <Route path="/signin" element={<SignIn />} />
-        <Route path="/admin" element={<Admin />} />
         <Route path="/addhouse" element={<AddHouse />}>
           <Route path="type" element={<AddType />} />
           <Route path="place" element={<AddPlace />} />

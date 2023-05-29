@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../../components/Header/Header";
 import styles from "./Home.module.scss";
 import top from "../../images/top.jpg";
@@ -8,16 +8,23 @@ import user3 from "../../images/user3.png";
 import search from "../../images/search.png";
 import catnice from "../../images/catnice.png";
 import support from "../../images/support.png";
-import post1 from "../../images/posts/post1.png";
-import post2 from "../../images/posts/post2.png";
-import post3 from "../../images/posts/post3.png";
-import post4 from "../../images/posts/post4.png";
 import Post from "../../components/Post/Post";
 import Footer from "../../components/Footer/Footer";
 import Search from "../../components/Search/Search";
 import { Helmet } from "react-helmet";
+import { getRecentHouses } from "../../routes/housing";
 
 function Home() {
+  const [recentPosts, setRecentPosts] = useState([]);
+
+  useEffect(() => {
+    const fetchRecentPosts = async () => {
+      const posts = await getRecentHouses();
+      setRecentPosts(posts);
+    };
+
+    fetchRecentPosts();
+  }, []);
   return (
     <>
       <Helmet>
@@ -124,32 +131,19 @@ function Home() {
         </div>
 
         <div className={styles.postsContainer}>
-          <h1>Most Booked Homes For Rent This Month</h1>
+          <h1>Recently published houses</h1>
           <div className={styles.posts}>
-            <Post
-              img={post1}
-              location={["Paris", "France"]}
-              dates={["3 July", "28 July"]}
-              rating={4.8}
-            />
-            <Post
-              img={post2}
-              location={["Barcelona", "Spain"]}
-              dates={["4 July", "30 July"]}
-              rating={4.7}
-            />
-            <Post
-              img={post3}
-              location={["Brussels", "Belgium"]}
-              dates={["12 July", "16 August"]}
-              rating={4.8}
-            />
-            <Post
-              img={post4}
-              location={["Lisbon", "Portugal"]}
-              dates={["8 July", "27 August"]}
-              rating={4.6}
-            />
+            {recentPosts.map((post, id) => (
+              <Post
+                key={id}
+                img={post.photo_one}
+                location={[post.city, post.country]}
+                dates={post.dates}
+                rating={post.rating}
+                style={styles.onePost}
+                id={post.id}
+              />
+            ))}
           </div>
         </div>
         <Footer />

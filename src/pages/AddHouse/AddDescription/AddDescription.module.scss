@@ -1,0 +1,29 @@
+@import "../../../scss/tools.scss";
+
+.textarea {
+  border: 2px solid black;
+  width: 100%;
+  height: 300px;
+  border-radius: 15px;
+  font-size: 20px;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.alertLenght {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  color: red;
+}
+
+.alert {
+  color: red;
+  border-color: red !important;
+}

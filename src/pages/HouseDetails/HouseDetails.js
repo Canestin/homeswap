@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./HouseDetails.module.scss";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
@@ -9,36 +9,72 @@ import CommentBar from "../../components/CommentBar/CommentBar";
 import Comment from "../../components/Comment/Comment";
 import fakeComments from "../../data/FakeComments";
 import SeeMoreButton from "../../components/SeeMoreButton/SeeMoreButton";
+import { useParams } from "react-router-dom";
+import { GrFormNext, GrFormPrevious } from "react-icons/gr";
+import { getHouseById } from "../../routes/housing";
 
 function HouseDetails() {
+  const [houseDetails, setHouseDetails] = useState(null);
+  const [poster, setPoster] = useState(null);
+  const [showImages, setShowImages] = useState(false);
+  const [scroll, setScroll] = useState(0);
+  const [translateX, setTranslateX] = useState(0);
+  const { houseId } = useParams();
+
+  const handleClickImage = (scr) => {
+    setShowImages(true);
+    setScroll(scr);
+    setTranslateX((100 / 3) * -scr);
+  };
+  const handleClickPrev = () => {
+    if (scroll === 0) return;
+    setTranslateX(translateX + 100 / 3);
+    setScroll(scroll - 1);
+  };
+  const handleClickNext = () => {
+    if (scroll === 2) return;
+    setTranslateX(translateX - 100 / 3);
+    setScroll(scroll + 1);
+  };
+
+  useEffect(() => {
+    const fetchHouseDetails = async () => {
+      const house = await getHouseById(houseId);
+      setHouseDetails(house);
+    };
+
+    fetchHouseDetails();
+  }, [houseId]);
   return (
     <>
       <Header />
       <div style={{ marginTop: 70 }} className={styles.container}>
-        <h2>Beautiful new studio in the center of the capital</h2>
+        <h2>{houseDetails?.ad_title}</h2>
         <div className={styles.meta_infos}>
           <img src={star} alt="star" />
           <span>4.5</span> {"•"}
           <span>10 comments</span> {"•"}
-          <span>Paris, France</span>
+          <span>
+            {houseDetails?.city}, {houseDetails?.country}
+          </span>
         </div>
 
         <div className={styles.infos_images}>
-          <div>
-            <img src={posts[0]} alt="image_1" />
+          <div onClick={() => handleClickImage(0)}>
+            <img src={houseDetails?.photo_one} alt="image_1" />
           </div>
-          <div>
-            <img src={posts[1]} alt="image_1" />
+          <div onClick={() => handleClickImage(1)}>
+            <img src={houseDetails?.photo_two} alt="image_2" />
           </div>
-          <div>
-            <img src={posts[2]} alt="image_1" />
+          <div onClick={() => handleClickImage(2)}>
+            <img src={houseDetails?.photo_three} alt="image_3" />
           </div>
-          <div>
+          {/* <div>
             <img src={posts[3]} alt="image_1" />
           </div>
           <div>
             <img src={posts[4]} alt="image_1" />
-          </div>
+          </div> */}
         </div>
       </div>
 
@@ -46,21 +82,17 @@ function HouseDetails() {
         <div className={styles.infos_host}>
           <div className={styles.infos_host_title}>
             <div>
-              <h1>Entire accommodation: Chez Jane</h1>
-              <span>8 travelers • 4 bedrooms • 4 beds • 2 bathrooms</span>
+              <h1>Entire accommodation: at Jane</h1>
+              <span>
+                {houseDetails?.number_of_travellers} travelers •{" "}
+                {houseDetails?.number_of_beds} bedrooms •{" "}
+                {houseDetails?.number_of_bedrooms} beds •{" "}
+                {houseDetails?.number_of_bathrooms} bathrooms
+              </span>
             </div>
             <img src={host_img} alt="host profile img" />
           </div>
-          <p>
-            Renovated fisherman's house between St Malo and Dinard, the property
-            accommodates 8/10 people in a warm atmosphere. Large living
-            room/living room with fitted kitchen, 4 bedrooms (160 bed), linen
-            room, 2 shower rooms and separate toilet. Fireplace and cozy
-            decoration to warm up your evenings. For holidays with family or
-            friends, you have direct access to the Rance for unforgettable walks
-            and swimming. Come and relax under the willow and enjoy the Emerald
-            Coast...
-          </p>
+          <p>{houseDetails?.description}</p>
           <p className={styles.see_more}>Learn more</p>
 
           <div className={styles.acc_offers}>
@@ -86,14 +118,12 @@ function HouseDetails() {
         </div>
 
         <div className={styles.infos_book}>
-          <span>Add dates to see the price</span>
-
+          <span>Add dates to see the price</span> <br />
           <div className={styles.meta_infos}>
             <img src={star} alt="star" />
             <span>4.5</span> {"•"}
             <span>10 comments</span>
           </div>
-
           <div className={styles.infos_context}>
             <div>
               <span>ARRIVAL</span>
@@ -108,7 +138,6 @@ function HouseDetails() {
               <span>1 Traveler</span>
             </div>
           </div>
-
           <div className={styles.context_reserv}>Book</div>
         </div>
       </div>
@@ -153,6 +182,52 @@ function HouseDetails() {
         <SeeMoreButton text="Show more comments" />
       </div>
 
+      {showImages && (
+        <div className={styles.seeImagesContainer}>
+          <div
+            className={`${styles.scroll_prev} ${
+              scroll === 0 && styles.comments_no_scrollable
+            }`}
+            onClick={handleClickPrev}
+          >
+            <GrFormPrevious />
+          </div>
+          <div className={styles.seeImages}>
+            <div
+              style={{ transform: `translateX(${translateX}%)` }}
+              className={styles.imageSlider}
+            >
+              <div>
+                <img src={houseDetails?.photo_one} alt="image_1" />
+              </div>
+              <div>
+                <img src={houseDetails?.photo_two} alt="image_2" />
+              </div>
+              <div>
+                <img src={houseDetails?.photo_three} alt="image_3" />
+              </div>
+            </div>
+          </div>
+          <div
+            className={`${styles.scroll_next} ${
+              scroll === 2 && styles.comments_no_scrollable
+            }`}
+            onClick={handleClickNext}
+          >
+            <GrFormNext color="white" />
+          </div>
+
+          <div
+            onClick={() => setShowImages(false)}
+            className={styles.closeSeeImages}
+          >
+            <span>Close</span>
+          </div>
+          <div className={styles.currentImage}>
+            <span>{scroll + 1}/3</span>
+          </div>
+        </div>
+      )}
       <Footer />
     </>
   );

@@ -7,11 +7,11 @@ import { useNavigate } from "react-router-dom";
 const datesX = ["10 August", "25 August"];
 const ratingX = 4.7;
 
-export default function Post({ img, location, dates, rating, style }) {
+export default function Post({ img, location, dates, rating, style, id }) {
   const navigate = useNavigate();
   return (
     <div
-      onClick={() => navigate("/house-details")}
+      onClick={() => navigate(`/house-details/${id}`)}
       className={`${styles.container} ${style && style}`}
     >
       {ratingX && (

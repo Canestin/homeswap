@@ -22,25 +22,28 @@ function AddLayout({ children, title, description, level }) {
   const handleNext = () => {
     switch (level) {
       case 1:
-        navigate("/add-numbers");
+        navigate("../place");
         break;
       case 2:
-        navigate("/equipment");
+        navigate("../numbers");
         break;
       case 3:
-        navigate("/add-photos");
+        navigate("../equipment");
         break;
       case 4:
-        navigate("/add-title");
+        navigate("../photos");
         break;
       case 5:
-        navigate("/add-description");
+        navigate("../title");
         break;
       case 6:
-        navigate("/publish");
+        navigate("../description");
         break;
       case 7:
-        navigate("/");
+        navigate("../publish");
+        break;
+      case 8:
+        navigate("");
         break;
       default:
         console.error("Error");
@@ -54,7 +57,7 @@ function AddLayout({ children, title, description, level }) {
     <div className={styles.container}>
       <div className={styles.top}>
         <img src={logo} alt="logo" />
-        <span>Enregistrer</span>
+        <span>Save</span>
       </div>
       <div className={styles.content}>
         <h1 className={styles.title}>{title}</h1>
@@ -72,15 +75,16 @@ function AddLayout({ children, title, description, level }) {
           <div style={{ backgroundColor: level > 4 ? "black" : notFilled }} />
           <div style={{ backgroundColor: level > 5 ? "black" : notFilled }} />
           <div style={{ backgroundColor: level > 6 ? "black" : notFilled }} />
+          <div style={{ backgroundColor: level > 7 ? "black" : notFilled }} />
         </div>
         <div className={styles.bottom__action__container}>
           <span
             onClick={handlePrev}
-            className={level === 7 && styles.isNotVisible}
+            className={level === 8 && styles.isNotVisible}
           >
             Back
           </span>
-          <span onClick={handleNext}>{level === 7 ? "Publish" : "Next"}</span>
+          <span onClick={handleNext}>{level === 8 ? "Publish" : "Next"}</span>
         </div>
       </div>
     </div>

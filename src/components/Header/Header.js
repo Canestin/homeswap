@@ -13,19 +13,20 @@ export default function Header() {
         <img onClick={() => navigate("/")} src={logo} alt="logo" />
         <ul>
           <li onClick={() => navigate("/availability")}>Availability</li>
-          <li onClick={() => navigate("/house-details")}>House Details</li>
           <li onClick={() => navigate("/host")}>Host</li>
           <li onClick={() => navigate("/messaging")}>Messaging</li>
-          {/* <li onClick={() => navigate("/about")}>About</li>
-					<li onClick={() => navigate("/contact")}>Contact</li> */}
         </ul>
       </div>
       <div className={styles.right}>
-        <span onClick={() => navigate("/add-place")} className={styles.putAcc}>
+        <span onClick={() => navigate("/addhouse")} className={styles.putAcc}>
           List my property on HomeSwap
         </span>
-        <BiUserCircle onClick={() => navigate("/signup")} cursor="pointer" color={Colors.blue} size={40} />
-        <BiUserCircle onClick={() => navigate("/Login")} cursor="pointer" color={Colors.blue} size={40} />
+        <BiUserCircle
+          onClick={() => navigate("/signin")}
+          cursor="pointer"
+          color={Colors.blue}
+          size={40}
+        />
       </div>
     </div>
   );

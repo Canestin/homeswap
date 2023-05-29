@@ -1,75 +1,74 @@
-@import '../../scss/tools.scss';
+@import "../../scss/tools.scss";
 
 * {
-
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 .container {
-	height: 100vh;
-	width: 100vw;
-	display: grid;
-	grid-template-rows: 80px 1fr 90px;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-rows: 80px 1fr 90px;
 }
 
 .top {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 0 40px;
-	// border-bottom: 1px solid rgba(gray, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  // border-bottom: 1px solid rgba(gray, 0.2);
 
-	img {
-		height: 80px;
-	}
+  img {
+    height: 80px;
+  }
 
-	> span {
-		border-radius: 30px;
-		border: 1px solid rgba(gray, 0.2);
-		padding: 8px 25px;
-	}
+  > span {
+    border-radius: 30px;
+    border: 1px solid rgba(gray, 0.2);
+    padding: 8px 25px;
+  }
 }
 
 .bottom {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-	.bottom__level__container {
-		height: 5px;
-		display: grid;
-		grid-template-columns: repeat(7, 1fr);
-		gap: 5px;
-	}
-	.bottom__action__container {
-		flex: 1;
-		@extend .top;
+  .bottom__level__container {
+    height: 5px;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 5px;
+  }
+  .bottom__action__container {
+    flex: 1;
+    @extend .top;
 
-		> span {
-			cursor: pointer;
-			&:hover {
-				background-color: rgba(gray, 0.2);
-			}
-		}
-	}
+    > span {
+      cursor: pointer;
+      &:hover {
+        background-color: rgba(gray, 0.2);
+      }
+    }
+  }
 }
 
 .content {
-	overflow-y: scroll;
-	margin: 30px 25% 5px;
-	padding: 0 50px;
+  overflow-y: scroll;
+  margin: 30px 25% 5px;
+  padding: 0 50px;
 
-	.title {
-		margin-bottom: 15px;
-		font-size: 35px;
-	}
+  .title {
+    margin-bottom: 15px;
+    font-size: 35px;
+  }
 
-	.description {
-		margin-bottom: 50px;
-		max-width: 85%;
-		font-size: 18px;
-		color: gray;
-	}
+  .description {
+    margin-bottom: 50px;
+    max-width: 85%;
+    font-size: 18px;
+    color: gray;
+  }
 }
 
 .isNotVisible {
-	visibility: hidden;
+  visibility: hidden;
 }
