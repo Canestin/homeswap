@@ -20,9 +20,10 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-
 **Collaborators:**
 
 - [Canestin Ndong](https://github.com/Canestin) <br>
-- [Pierre Sedo](https://github.com/Pierro236) <br>
-- [Athithan Murugan](https://github.com/athithanmurugan)
+- [Victor Habila](https://github.com/victorhabila) <br>
+- [Asmau Aminu](https://github.com/asam62) <br>
+- [Athithan Murugan](https://github.com/athithanmurugan) <br>
+- [Arthur Total](https://github.com/arthurtotalite)
