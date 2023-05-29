@@ -6,44 +6,49 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import HostProfile from "./pages/HostProfile/HostProfile";
 import Messaging from "./pages/Messaging/Messaging";
-import AddPlace from "./pages/AddPlace/AddPlace";
-import AddNumbers from "./pages/AddNumbers/AddNumbers";
-import Equipment from "./pages/Equipment/Equipment";
-import AddPhotos from "./pages/AddPhotos/AddPhotos";
-import AddTitle from "./pages/AddTitle/AddTitle";
-import AddDescription from "./pages/AddDescription/AddDescription";
-import Publish from "./pages/Publish/Publish";
-import AddType from "./pages/AddType/AddType";
+import AddPlace from "./pages/AddHouse/AddPlace/AddPlace";
+import AddNumbers from "./pages/AddHouse/AddNumbers/AddNumbers";
+import AddEquipments from "./pages/AddHouse/AddEquipments/AddEquipments";
+import AddPhotos from "./pages/AddHouse/AddPhotos/AddPhotos";
+import AddTitle from "./pages/AddHouse/AddTitle/AddTitle";
+import AddDescription from "./pages/AddHouse/AddDescription/AddDescription";
+import Publish from "./pages/AddHouse/Publish/Publish";
+import AddType from "./pages/AddHouse/AddType/AddType";
 import SignupForm from "./pages/SignUp/SignUp";
-import LoginForm from "./pages/LogIn/Login";
+import SignIn from "./pages/SignIn/SignIn";
+import Admin from "./pages/Admin/Admin";
+import AddHouse from "./pages/AddHouse/AddHouse";
 function App() {
-	const { pathname } = useLocation();
+  const { pathname } = useLocation();
 
-	useEffect(() => {
-		window.scrollTo(0, 0);
-	}, [pathname]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
-	return (
-		<div>
-			<Routes>
-				<Route path="/" element={<Home />} />
-				<Route path="/availability" element={<Availability />} />
-				<Route path="/house-details" element={<HouseDetails />} />
-				<Route path="/messaging" element={<Messaging />} />
-				<Route path="/host" element={<HostProfile />} />
-				<Route path="/add-type" element={<AddType />} />
-				<Route path="/add-place" element={<AddPlace />} />
-				<Route path="/add-numbers" element={<AddNumbers />} />
-				<Route path="/equipment" element={<Equipment />} />
-				<Route path="/add-photos" element={<AddPhotos />} />
-				<Route path="/add-title" element={<AddTitle />} />
-				<Route path="/add-description" element={<AddDescription />} />
-				<Route path="/publish" element={<Publish />} />
-				<Route path="/signup" element={<SignupForm />} />
-				<Route path="/Login" element={<LoginForm />} />
-				<Route path="/*" element={<NotFound />} />
-			</Routes>
-		</div>
-	);
+  return (
+    <div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/availability" element={<Availability />} />
+        <Route path="/house-details/:houseId" element={<HouseDetails />} />
+        <Route path="/messaging" element={<Messaging />} />
+        <Route path="/host" element={<HostProfile />} />
+        <Route path="/signup" element={<SignupForm />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/addhouse" element={<AddHouse />}>
+          <Route path="type" element={<AddType />} />
+          <Route path="place" element={<AddPlace />} />
+          <Route path="numbers" element={<AddNumbers />} />
+          <Route path="equipment" element={<AddEquipments />} />
+          <Route path="photos" element={<AddPhotos />} />
+          <Route path="title" element={<AddTitle />} />
+          <Route path="description" element={<AddDescription />} />
+          <Route path="publish" element={<Publish />} />
+        </Route>
+        <Route path="/*" element={<NotFound />} />
+      </Routes>
+    </div>
+  );
 }
 export default App;
