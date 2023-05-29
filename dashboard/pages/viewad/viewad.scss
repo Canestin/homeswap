@@ -1,0 +1,37 @@
+.Viewad {
+  display: flex;
+}
+
+.adminContainer {
+  flex: 1;
+  padding: 20px;
+}
+
+.apartmentDetails {
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  padding: 30px;
+}
+
+.apartmentDetails h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.detailsContainer {
+  margin-top: 20px;
+}
+
+.detailsContainer h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.detailsContainer p {
+  margin-bottom: 5px;
+}
+
+.loadingMessage {
+  margin-top: 20px;
+  font-style: italic;
+}
