@@ -1,6 +1,6 @@
 import axios from "axios";
 import { API_URL, FULLSTACK, NoFullStackMessage } from "./config";
-import houses from "../seed/available/housing.json";
+import houses from "../seed/available/housing";
 
 export const getHouseById = async (id) => {
   if (FULLSTACK) {
