@@ -122,18 +122,10 @@
     hyphens: auto;
     line-height: 30px;
   }
-
-  .see_more {
-    font-weight: bold;
-    text-decoration: underline;
-    padding-bottom: 40px;
-    border-bottom: 1px solid rgba(gray, 0.5);
-    cursor: pointer;
-  }
 }
 
 .acc_offers {
-  margin-top: 30px;
+  margin-top: 50px;
 
   ul {
     padding: 20px;
@@ -328,15 +320,17 @@
     position: fixed;
     top: 40px;
     left: 40px;
-    color: white;
-    border: 1px solid white;
-    padding: 7px 15px;
+    background-color: white;
+    color: black;
+    padding: 7px 30px;
     border-radius: 20px;
     cursor: pointer;
+    font-weight: bold;
 
     &:hover {
-      background-color: white;
-      color: black;
+      background-color: black;
+      border: 1px solid white;
+      color: white;
     }
   }
 

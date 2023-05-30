@@ -12,6 +12,7 @@ import SeeMoreButton from "../../components/SeeMoreButton/SeeMoreButton";
 import { useParams } from "react-router-dom";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 import { getHouseById } from "../../routes/housing";
+import { useNavigate } from "react-router-dom";
 
 function HouseDetails() {
   const [houseDetails, setHouseDetails] = useState(null);
@@ -20,6 +21,7 @@ function HouseDetails() {
   const [scroll, setScroll] = useState(0);
   const [translateX, setTranslateX] = useState(0);
   const { houseId } = useParams();
+  const navigate = useNavigate();
 
   const handleClickImage = (scr) => {
     setShowImages(true);
@@ -37,14 +39,37 @@ function HouseDetails() {
     setScroll(scroll + 1);
   };
 
+  let timeOut;
   useEffect(() => {
     const fetchHouseDetails = async () => {
       const house = await getHouseById(houseId);
       setHouseDetails(house);
+
+      if (!house) {
+        timeOut = setTimeout(() => navigate("/availability"), 2000);
+      } else {
+        clearTimeout(timeOut);
+      }
     };
 
     fetchHouseDetails();
   }, [houseId]);
+
+  if (!houseDetails) {
+    return (
+      <div
+        style={{
+          height: "50vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <h1>Not Found...</h1>
+      </div>
+    );
+  }
+
   return (
     <>
       <Header />
@@ -93,7 +118,6 @@ function HouseDetails() {
             <img src={host_img} alt="host profile img" />
           </div>
           <p>{houseDetails?.description}</p>
-          <p className={styles.see_more}>Learn more</p>
 
           <div className={styles.acc_offers}>
             <h2>What this accommodation offers</h2>
