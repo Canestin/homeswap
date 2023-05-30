@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./AddLayout.module.scss";
 import logo from "../../images/logo.png";
 import { useNavigate } from "react-router-dom";
 
 const notFilled = "#e0e0e0";
-function AddLayout({ children, title, description, level }) {
+function AddLayout({ children, title, description, level, data }) {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -20,6 +20,8 @@ function AddLayout({ children, title, description, level }) {
     };
   }, []);
   const handleNext = () => {
+    if (level < 8 && !data.isValid) return;
+    data.dispatch();
     switch (level) {
       case 1:
         navigate("../place");
@@ -43,7 +45,8 @@ function AddLayout({ children, title, description, level }) {
         navigate("../publish");
         break;
       case 8:
-        navigate("");
+        // navigate("");
+        alert("Félicitations ! Votre annonce a été publiée.");
         break;
       default:
         console.error("Error");
@@ -56,7 +59,12 @@ function AddLayout({ children, title, description, level }) {
   return (
     <div className={styles.container}>
       <div className={styles.top}>
-        <img src={logo} alt="logo" />
+        <img
+          style={{ cursor: "pointer" }}
+          onClick={() => navigate("/")}
+          src={logo}
+          alt="logo"
+        />
         <span>Save</span>
       </div>
       <div className={styles.content}>
@@ -84,7 +92,12 @@ function AddLayout({ children, title, description, level }) {
           >
             Back
           </span>
-          <span onClick={handleNext}>{level === 8 ? "Publish" : "Next"}</span>
+          <span
+            className={!data.isValid ? styles.disable : ""}
+            onClick={handleNext}
+          >
+            {level === 8 ? "Publish" : "Next"}
+          </span>
         </div>
       </div>
     </div>

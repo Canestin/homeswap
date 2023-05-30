@@ -18,7 +18,7 @@ export const getRecentHouses = async () => {
 };
 
 export const createHouse = async (houseData) => {
-  const response = await axios.post(API_URL + "/housing/", houseData);
+  const response = await axios.post(API_URL + "/housing/add", houseData);
   return response.data;
 };
 export const createManyHouses = async (housesData) => {
@@ -27,6 +27,30 @@ export const createManyHouses = async (housesData) => {
 };
 
 export const updateHouse = async (houseData) => {
-  const response = await axios.put(API_URL + "/housing/", houseData);
+  const response = await axios.put(
+    API_URL + "/housing/" + houseData.id,
+    houseData
+  );
   return response.data;
+};
+
+export const uploadImages = (files) => {
+  const formData = new FormData();
+
+  formData.append("file1", files[0]);
+  formData.append("file2", files[1]);
+  formData.append("file3", files[2]);
+
+  axios
+    .post(API_URL + "/housing/upload-images", formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    })
+    .then((response) => {
+      console.log(response.data);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
 };

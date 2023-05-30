@@ -12,10 +12,16 @@ function Availability() {
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
 
+  console.log(posts[0]);
+
   useEffect(() => {
     const fetchPosts = async () => {
       const posts = await getHouses();
-      setposts(posts);
+      setposts(
+        posts.sort(
+          (a, b) => new Date(b.date_created) - new Date(a.date_created)
+        )
+      );
     };
 
     fetchPosts();

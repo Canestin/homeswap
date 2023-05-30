@@ -1,6 +1,8 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import styles from "./AddPlace.module.scss";
 import AddLayout from "../../../components/AddLayout/AddLayout";
+import { useDispatch, useSelector } from "react-redux";
+import { setAddress as sa } from "../../../redux/houseSlice";
 
 const title = "Where is your accommodation located?";
 const description =
@@ -19,6 +21,8 @@ function AddPlace() {
   const cityRef = useRef(null);
   const postalCodeRef = useRef(null);
   const addressRef = useRef(null);
+  const dispatch = useDispatch();
+  const house = useSelector((state) => state.house);
 
   const handleFocus = useCallback((inputRef) => {
     switch (inputRef) {
@@ -41,7 +45,6 @@ function AddPlace() {
   }, []);
 
   const handleBlur = useCallback((inputRef) => {
-    console.table("inputRef", inputRef);
     switch (inputRef.current.name) {
       case "country":
         if (!inputRef.current.value) {
@@ -115,9 +118,37 @@ function AddPlace() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [!!country, !!city, !!postalCode, !!address]);
 
+  const dispatchAction = () => {
+    dispatch(
+      sa({
+        country,
+        city,
+        zipcode: postalCode,
+        address,
+      })
+    );
+  };
+
+  const validator1 =
+    !!house.address && !!house.country && !!house.city && !!house.zipcode;
+  const validator2 = !!address && !!country && !!city && !!postalCode;
+
+  useEffect(() => {
+    if (validator1) {
+      setCity(house.city);
+      setCountry(house.country);
+      setAddress(house.address);
+      setPostalCode(house.zipcode);
+    }
+  }, []);
   return (
     <div>
-      <AddLayout title={title} description={description} level={2}>
+      <AddLayout
+        data={{ isValid: validator2, dispatch: dispatchAction }}
+        title={title}
+        description={description}
+        level={2}
+      >
         <div className={styles.input}>
           {showCountryLabel && <span>Country</span>}
           <input

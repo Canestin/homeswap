@@ -1,18 +1,37 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./AddType.module.scss";
 import AddLayout from "../../../components/AddLayout/AddLayout";
 import { AiOutlineHome } from "react-icons/ai";
 import { MdOutlineMeetingRoom, MdOutlineBedroomParent } from "react-icons/md";
+import { useDispatch, useSelector } from "react-redux";
+import { setType as st } from "../../../redux/houseSlice";
 
 const title = "What type of accommodation will be available to travellers?";
 const description = "";
 
 function AddType() {
   const [type, setType] = useState(null);
+  const dispatch = useDispatch();
+  const house = useSelector((state) => state.house);
+
+  const dispatchAction = () => {
+    dispatch(st(type));
+  };
+
+  useEffect(() => {
+    if (!!house.category) {
+      setType(house.category);
+    }
+  }, []);
 
   return (
     <div>
-      <AddLayout title={title} description={description} level={1}>
+      <AddLayout
+        data={{ isValid: !!type, dispatch: dispatchAction }}
+        title={title}
+        description={description}
+        level={1}
+      >
         <div
           onClick={() => setType("entire")}
           className={`${styles.item} ${type === "entire" && styles.selected}`}

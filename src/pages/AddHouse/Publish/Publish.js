@@ -2,19 +2,35 @@ import React from "react";
 import styles from "./Publish.module.scss";
 import AddLayout from "../../../components/AddLayout/AddLayout";
 import Post from "../../../components/Post/Post";
-import post1 from "../../../images/posts/post1.png";
+import { useSelector } from "react-redux";
+import { createHouse, uploadImages } from "../../../routes/housing";
 
-const title = "Publish your ad";
+const title = "Publish your ad!";
 const description = "Everything has been configured, let's take the big step!";
 
 function Publish() {
+  const house = useSelector((state) => state.house);
+
+  const dispatchAction = async () => {
+    uploadImages([
+      house.photo_one_to_send,
+      house.photo_two_to_send,
+      house.photo_three_to_send,
+    ]);
+    await createHouse(house);
+  };
   return (
     <div>
-      <AddLayout title={title} description={description} level={8}>
+      <AddLayout
+        data={{ isValid: true, dispatch: dispatchAction }}
+        title={title}
+        description={description}
+        level={8}
+      >
         <div className={styles.content}>
           <Post
-            img={post1}
-            location={["Paris", "France"]}
+            img={house.photo_one_to_display}
+            location={[house.city, house.country]}
             dates={["3 July", "28 July"]}
           />
         </div>

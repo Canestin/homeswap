@@ -18,8 +18,11 @@ export default function Header() {
         </ul>
       </div>
       <div className={styles.right}>
-        <span onClick={() => navigate("/addhouse")} className={styles.putAcc}>
-          List my property on HomeSwap
+        <span
+          onClick={() => navigate("/addhouse/type")}
+          className={styles.putAcc}
+        >
+          Add my property
         </span>
         <BiUserCircle
           onClick={() => navigate("/signin")}

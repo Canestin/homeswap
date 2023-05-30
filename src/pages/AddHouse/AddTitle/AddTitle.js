@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./AddTitle.module.scss";
 import AddLayout from "../../../components/AddLayout/AddLayout";
 import { BiInfoCircle } from "react-icons/bi";
+import { useDispatch, useSelector } from "react-redux";
+import { setTitle } from "../../../redux/houseSlice";
 
 const title = "Now give your ad a title (type: house)";
 const description = "Short titles are usually the most effective.";
@@ -11,10 +13,29 @@ const TITLE_LENGTH_LIMIT = 42;
 function AddTitle() {
   const [textValue, setTextValue] = useState("");
   const [textLength, setTextLength] = useState(0);
+  const dispatch = useDispatch();
+  const house = useSelector((state) => state.house);
 
+  const dispatchAction = () => {
+    dispatch(setTitle(textValue));
+  };
+
+  useEffect(() => {
+    if (!!house.ad_title) {
+      setTextValue(house.ad_title);
+    }
+  }, []);
   return (
     <div>
-      <AddLayout title={title} description={description} level={6}>
+      <AddLayout
+        data={{
+          isValid: textLength > 5 && textLength < TITLE_LENGTH_LIMIT,
+          dispatch: dispatchAction,
+        }}
+        title={title}
+        description={description}
+        level={6}
+      >
         <textarea
           className={`${styles.textarea} ${
             textLength > TITLE_LENGTH_LIMIT && styles.alert
