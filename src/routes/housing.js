@@ -1,37 +1,60 @@
 import axios from "axios";
-import API_URL from "./config";
+import { API_URL, FULLSTACK, NoFullStackMessage } from "./config";
+import houses from "../seed/available/housing.json";
 
 export const getHouseById = async (id) => {
-  const response = await axios.get(`${API_URL}/housing/${id}`);
-  return response.data;
+  if (FULLSTACK) {
+    const response = await axios.get(`${API_URL}/housing/${id}`);
+    return response.data;
+  }
+  return houses.find((h) => h.id == id);
 };
 
 export const getHouses = async () => {
-  const response = await axios.get(API_URL + "/housing/");
-  return response.data;
+  if (FULLSTACK) {
+    const response = await axios.get(API_URL + "/housing/");
+    return response.data;
+  }
+  return houses;
 };
 
 export const getRecentHouses = async () => {
-  const res = await axios.get(API_URL + "/housing/");
-  const l = res.data.length;
-  return [res.data[l - 1], res.data[l - 2], res.data[l - 3], res.data[l - 4]];
+  if (FULLSTACK) {
+    const res = await axios.get(API_URL + "/housing/");
+    const l = res.data.length;
+    return [res.data[l - 1], res.data[l - 2], res.data[l - 3], res.data[l - 4]];
+  }
+  const l = houses.length;
+  return [houses[l - 1], houses[l - 2], houses[l - 3], houses[l - 4]];
 };
 
 export const createHouse = async (houseData) => {
-  const response = await axios.post(API_URL + "/housing/add", houseData);
-  return response.data;
+  if (FULLSTACK) {
+    const response = await axios.post(API_URL + "/housing/add", houseData);
+    return response.data;
+  }
+  alert(NoFullStackMessage);
 };
 export const createManyHouses = async (housesData) => {
-  const response = await axios.post(API_URL + "/housing/add-many", housesData);
-  return response.data;
+  if (FULLSTACK) {
+    const response = await axios.post(
+      API_URL + "/housing/add-many",
+      housesData
+    );
+    return response.data;
+  }
+  alert(NoFullStackMessage);
 };
 
 export const updateHouse = async (houseData) => {
-  const response = await axios.put(
-    API_URL + "/housing/" + houseData.id,
-    houseData
-  );
-  return response.data;
+  if (FULLSTACK) {
+    const response = await axios.put(
+      API_URL + "/housing/" + houseData.id,
+      houseData
+    );
+    return response.data;
+  }
+  alert(NoFullStackMessage);
 };
 
 export const uploadImages = (files) => {
