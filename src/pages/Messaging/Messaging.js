@@ -5,7 +5,7 @@ import { AiOutlineCheck } from "react-icons/ai";
 import { RiSendPlaneFill } from "react-icons/ri";
 import { useEffect, useState } from "react";
 import user1 from "../../images/user1.png";
-import post from "../../images/posts/post8.png";
+import post from "../../seed/images/houses/11.1.jpeg";
 import SeeMoreButton from "../../components/SeeMoreButton/SeeMoreButton";
 import { useNavigate } from "react-router-dom";
 

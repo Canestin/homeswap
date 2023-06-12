@@ -17,6 +17,17 @@ import AddType from "./pages/AddHouse/AddType/AddType";
 import SignupForm from "./pages/SignUp/SignUp";
 import SignIn from "./pages/SignIn/SignIn";
 import AddHouse from "./pages/AddHouse/AddHouse";
+import Admin from "./pages/Dashboard/pages/admin/Admin";
+import DashboardHome from "./pages/Dashboard/pages/home/DashboardHome";
+import UsersList from "./pages/Dashboard/pages/UsersList/UsersList";
+import Single from "./pages/Dashboard/pages/single/single";
+import Login from "./pages/Dashboard/pages/login/login";
+import Viewad from "./pages/Dashboard/pages/viewad/Viewad";
+import New from "./pages/Dashboard/pages/new/New";
+import { userInputs } from "./pages/Dashboard/formSource";
+import Apart from "./pages/Dashboard/pages/apart/Apart";
+import Notification from "./pages/Dashboard/pages/notification/Notification";
+
 function App() {
   const { pathname } = useLocation();
 
@@ -43,6 +54,40 @@ function App() {
           <Route path="title" element={<AddTitle />} />
           <Route path="description" element={<AddDescription />} />
           <Route path="publish" element={<Publish />} />
+        </Route>
+
+        <Route
+          path="/dashboard/apartments"
+          element={<New inputs={userInputs} title="Apartments category" />}
+        />
+
+        <Route path="/dashboard/login" element={<Login />} />
+        <Route path="/dashboard/users" element={<UsersList />}>
+          <Route path=":userId" element={<Single />} />
+        </Route>
+        <Route path="/dashboard/viewad" element={<Viewad />} />
+        <Route
+          path="/dashboard/apartments"
+          element={<New inputs={userInputs} title="Apartments category" />}
+        />
+        <Route path="/dashboard/bookings" element={<Apart />} />
+        <Route path="/dashboard/reply" element={<Notification />} />
+        <Route path="/dashboard/profile" element={<Admin />} />
+
+        <Route path="/dashboard" element={<DashboardHome />}>
+          {/* <Route path="login" element={<Login />} />
+          <Route path="users" element={<List />}>
+            <Route path=":userId" element={<Single />} />
+          </Route>
+          <Route path="viewad" element={<Viewad />} />
+          <Route
+            path="apartments"
+            element={<New inputs={userInputs} title="Apartments category" />}
+          />
+          <Route path="bookings" element={<Apart />} />
+          <Route path="messages" element={<Recieve />} />
+          <Route path="reply" element={<Notification />} />
+          <Route path="profile" element={<Admin />} /> */}
         </Route>
         <Route path="/*" element={<NotFound />} />
       </Routes>

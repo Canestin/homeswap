@@ -6,8 +6,8 @@ import Post from "../../components/Post/Post";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import Search from "../../components/Search/Search";
 import { getHouses } from "../../routes/housing";
-
 function Availability() {
+  const [availableHouses, setAvailableHouses] = useState([]);
   const [posts, setposts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
@@ -18,6 +18,11 @@ function Availability() {
     const fetchPosts = async () => {
       const posts = await getHouses();
       setposts(
+        posts.sort(
+          (a, b) => new Date(b.date_created) - new Date(a.date_created)
+        )
+      );
+      setAvailableHouses(
         posts.sort(
           (a, b) => new Date(b.date_created) - new Date(a.date_created)
         )
@@ -42,7 +47,6 @@ function Availability() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [page]);
-
   useEffect(() => {
     if (page > 1) {
       setLoading(true);
@@ -62,7 +66,7 @@ function Availability() {
       <div className={styles.container}>
         <h1>Availability</h1>
 
-        <Search />
+        <Search posts={availableHouses} setposts={setposts} />
 
         <div className={styles.posts}>
           {posts.map((post, id) => (
@@ -77,6 +81,12 @@ function Availability() {
             />
           ))}
         </div>
+
+        {!loading && !posts.length && (
+          <div className={styles.noAvailableHouse}>
+            <p>Aucun logement ne correspond à vos critères de recherche </p>
+          </div>
+        )}
 
         {loading && (
           <div className={styles.loading}>

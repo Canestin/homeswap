@@ -3,7 +3,6 @@ import styles from "./HouseDetails.module.scss";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import star from "../../images/star.png";
-import posts from "../../images/posts";
 import host_img from "../../images/user3.png";
 import CommentBar from "../../components/CommentBar/CommentBar";
 import Comment from "../../components/Comment/Comment";

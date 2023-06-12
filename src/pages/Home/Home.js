@@ -14,7 +14,7 @@ import Search from "../../components/Search/Search";
 import { Helmet } from "react-helmet";
 import { getRecentHouses } from "../../routes/housing";
 
-function Home() {
+function DashboardHome() {
   const [recentPosts, setRecentPosts] = useState([]);
 
   useEffect(() => {
@@ -152,4 +152,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default DashboardHome;
