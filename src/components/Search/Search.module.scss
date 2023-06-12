@@ -2,7 +2,7 @@
 
 .topSearch {
   position: relative;
-  width: 600px;
+  width: 700px;
   margin: 0 auto 80px;
   border-radius: 50px;
   padding: 10px 30px;
@@ -64,7 +64,17 @@
 }
 
 .calendar {
+  // width: max-content;
   position: absolute;
-  top: 100px;
-  right: 100px;
+  top: 90px;
+  // border: 1px solid rgb(12, 12, 12);
+  padding: 10px;
+  border-radius: 20px;
+  z-index: 999;
+  background-color: white;
+  * {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+      "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+      "Helvetica Neue", sans-serif !important;
+  }
 }

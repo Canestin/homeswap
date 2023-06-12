@@ -1,15 +1,45 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { GrLocation, GrCalendar } from "react-icons/gr";
 import { RiSearch2Line } from "react-icons/ri";
 import styles from "./Search.module.scss";
-import DateRangePicker from "@wojtekmaj/react-daterange-picker";
-import "@wojtekmaj/react-daterange-picker/dist/DateRangePicker.css";
-import "react-calendar/dist/Calendar.css";
+import { useSelector } from "react-redux";
+import DateRange from "../../components/DateRange/DateRange";
 
 function Search({ posts, setposts }) {
-  const [dates, setDdates] = useState([new Date(), new Date()]);
+  const [showDates, setShowDates] = useState(false);
+  const [datesToDisplay, setDatesToDisplay] = useState();
+  const dates = useSelector((state) => state.dates);
 
-  console.log("dates de chez dates", dates);
+  useEffect(() => {
+    let d = [];
+    const ds = [dates[0].startDate, dates[0].endDate];
+    for (const date of ds) {
+      const jour = ("0" + date.getDate()).slice(-2);
+      const mois = ("0" + (date.getMonth() + 1)).slice(-2);
+      const annee = date.getFullYear().toString().substr(-2);
+      d.push(`${jour}/${mois}/${annee}`);
+    }
+
+    setDatesToDisplay(`${d[0]} - ${d[1]}`);
+  }, [dates]);
+
+  const handleSearch = () => {
+    if (dates[0].startDate && dates[0].endDate) {
+      setposts(
+        posts.filter((p) => {
+          console.log("p de chez p de papidou", p);
+          const date = new Date(p.date_created);
+          const dateToCompare = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`;
+          return (
+            dateToCompare >= datesToDisplay.split(" - ")[0] &&
+            dateToCompare <= datesToDisplay.split(" - ")[1]
+          );
+        })
+      );
+    }
+
+    setShowDates(false);
+  };
 
   return (
     <div className={styles.topSearch}>
@@ -18,6 +48,7 @@ function Search({ posts, setposts }) {
         <div className={styles.topSearchInfos}>
           <span>Where ?</span>
           <input
+            onFocus={() => setShowDates(false)}
             onChange={(e) =>
               setposts(
                 posts.filter(
@@ -36,15 +67,25 @@ function Search({ posts, setposts }) {
         <GrCalendar size={20} />
         <div className={styles.topSearchInfos}>
           <span>When ?</span>
-          <input type="text" placeholder="Select a date" />
+          <input
+            value={datesToDisplay}
+            onClick={() => setShowDates(true)}
+            // onFocus={(v) => setShowDates(!v)}
+            // onBlur={() => setShowDates(false)}
+            type="text"
+            placeholder="jj/mm/aa - jj/mm/aa"
+          />
         </div>
       </div>
-      <div>
+      <div onClick={handleSearch}>
         <RiSearch2Line />
       </div>
-      <div className={styles.calendar}>
-        <DateRangePicker onChange={setDdates} value={dates} />
-      </div>
+
+      {showDates && (
+        <div className={styles.calendar}>
+          <DateRange />
+        </div>
+      )}
     </div>
   );
 }
