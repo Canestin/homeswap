@@ -45,8 +45,9 @@ function AddLayout({ children, title, description, level, data }) {
         navigate("../publish");
         break;
       case 8:
-        // navigate("");
         alert("Félicitations ! Votre annonce a été publiée.");
+        navigate("/dashboard");
+
         break;
       default:
         console.error("Error");

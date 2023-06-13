@@ -21,12 +21,10 @@ import Admin from "./pages/Dashboard/pages/admin/Admin";
 import DashboardHome from "./pages/Dashboard/pages/home/DashboardHome";
 import UsersList from "./pages/Dashboard/pages/UsersList/UsersList";
 import Single from "./pages/Dashboard/pages/single/single";
-import Login from "./pages/Dashboard/pages/login/login";
 import Viewad from "./pages/Dashboard/pages/viewad/Viewad";
 import New from "./pages/Dashboard/pages/new/New";
 import { userInputs } from "./pages/Dashboard/formSource";
 import Apart from "./pages/Dashboard/pages/apart/Apart";
-import Notification from "./pages/Dashboard/pages/notification/Notification";
 
 function App() {
   const { pathname } = useLocation();
@@ -61,7 +59,6 @@ function App() {
           element={<New inputs={userInputs} title="Apartments category" />}
         />
 
-        <Route path="/dashboard/login" element={<Login />} />
         <Route path="/dashboard/users" element={<UsersList />}>
           <Route path=":userId" element={<Single />} />
         </Route>
@@ -71,7 +68,6 @@ function App() {
           element={<New inputs={userInputs} title="Apartments category" />}
         />
         <Route path="/dashboard/bookings" element={<Apart />} />
-        <Route path="/dashboard/reply" element={<Notification />} />
         <Route path="/dashboard/profile" element={<Admin />} />
 
         <Route path="/dashboard" element={<DashboardHome />}>

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Header from "../../components/Header/Header";
 import styles from "./SignIn.module.scss";
 import { useNavigate } from "react-router-dom";
+import api from "../../services/api";
+import { toast } from "react-toastify";
 
 function LoginForm() {
   const [email, setEmail] = useState("");
@@ -9,19 +11,62 @@ function LoginForm() {
 
   const navigate = useNavigate();
 
+  const handleSubmit = () => {
+    api
+      .post("/signup", {
+        email: "ndong.mboula@gmail.com",
+        firstName: "Mboula",
+        lastNamr: "Ndong",
+      })
+      .then((res) => {
+        if (res.status === 401) {
+          toast.error("nom d'utilisateur ou mot de passe incorrecte");
+        }
+        if (res.status !== 200 && res.status !== 401) {
+          toast.success("🦄 Wow so easy!", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+        }
+        return res;
+      })
+      .then((json) => {
+        // setOnConnect(true);
+        toast.success("🦄 connextion réussie !", {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+        navigate("/");
+      })
+      .catch((err) => {
+        if (err.response.status === 401) {
+          toast.error("nom d'utilisateur ou mot de passe incorrecte");
+        } else {
+          navigate("/");
+          toast.error("Application indisponible");
+        }
+        console.error(err.response);
+      });
+  };
+
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
 
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Here you can add your login logic
-    console.log("Email:", email);
-    console.log("Password:", password);
   };
 
   return (

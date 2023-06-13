@@ -12,7 +12,7 @@ import Post from "../../components/Post/Post";
 import Footer from "../../components/Footer/Footer";
 import Search from "../../components/Search/Search";
 import { Helmet } from "react-helmet";
-import { getRecentHouses } from "../../routes/housing";
+import { getRecentHouses } from "../../services/housingService";
 
 function DashboardHome() {
   const [recentPosts, setRecentPosts] = useState([]);

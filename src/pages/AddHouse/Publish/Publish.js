@@ -3,7 +3,7 @@ import styles from "./Publish.module.scss";
 import AddLayout from "../../../components/AddLayout/AddLayout";
 import Post from "../../../components/Post/Post";
 import { useSelector } from "react-redux";
-import { createHouse, uploadImages } from "../../../routes/housing";
+import { createHouse, uploadImages } from "../../../services/housingService";
 
 const title = "Publish your ad!";
 const description = "Everything has been configured, let's take the big step!";

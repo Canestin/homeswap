@@ -10,7 +10,7 @@ import fakeComments from "../../data/FakeComments";
 import SeeMoreButton from "../../components/SeeMoreButton/SeeMoreButton";
 import { useParams } from "react-router-dom";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
-import { getHouseById } from "../../routes/housing";
+import { getHouseById } from "../../services/housingService";
 import { useNavigate } from "react-router-dom";
 
 function HouseDetails() {
@@ -141,7 +141,7 @@ function HouseDetails() {
         </div>
 
         <div className={styles.infos_book}>
-          <span>Add dates to see the price</span> <br />
+          <span>Book this accommodation</span> <br />
           <div className={styles.meta_infos}>
             <img src={star} alt="star" />
             <span>4.5</span> {"•"}
@@ -161,7 +161,12 @@ function HouseDetails() {
               <span>1 Traveler</span>
             </div>
           </div>
-          <div className={styles.context_reserv}>Book</div>
+          <div
+            onClick={() => navigate("/dashboard/bookings")}
+            className={styles.context_reserv}
+          >
+            Book
+          </div>
         </div>
       </div>
 

@@ -5,7 +5,7 @@ import Header from "../../components/Header/Header";
 import Post from "../../components/Post/Post";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import Search from "../../components/Search/Search";
-import { getHouses } from "../../routes/housing";
+import { getHouses } from "../../services/housingService";
 function Availability() {
   const [availableHouses, setAvailableHouses] = useState([]);
   const [posts, setposts] = useState([]);
@@ -84,7 +84,7 @@ function Availability() {
 
         {!loading && !posts.length && (
           <div className={styles.noAvailableHouse}>
-            <p>Aucun logement ne correspond à vos critères de recherche </p>
+            <p>No accommodation matches your search criteria</p>
           </div>
         )}
 
