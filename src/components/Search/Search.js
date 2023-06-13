@@ -69,8 +69,6 @@ function Search({ posts, setposts }) {
           <input
             value={datesToDisplay}
             onClick={() => setShowDates(true)}
-            // onFocus={(v) => setShowDates(!v)}
-            // onBlur={() => setShowDates(false)}
             type="text"
             placeholder="jj/mm/aa - jj/mm/aa"
           />

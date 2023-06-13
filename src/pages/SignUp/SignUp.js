@@ -25,15 +25,6 @@ const SignupForm = () => {
   }, [password, confirmPassword]);
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(
-      "PayLoad",
-      JSON.stringify({
-        email,
-        firstName,
-        lastName,
-        password,
-      })
-    );
 
     api
       .post("/user/signup", {
