@@ -27,7 +27,6 @@ function Search({ posts, setposts }) {
     if (dates[0].startDate && dates[0].endDate) {
       setposts(
         posts.filter((p) => {
-          console.log("p de chez p de papidou", p);
           const date = new Date(p.date_created);
           const dateToCompare = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`;
           return (

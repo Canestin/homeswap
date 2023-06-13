@@ -69,22 +69,7 @@ function App() {
         />
         <Route path="/dashboard/bookings" element={<Apart />} />
         <Route path="/dashboard/profile" element={<Admin />} />
-
-        <Route path="/dashboard" element={<DashboardHome />}>
-          {/* <Route path="login" element={<Login />} />
-          <Route path="users" element={<List />}>
-            <Route path=":userId" element={<Single />} />
-          </Route>
-          <Route path="viewad" element={<Viewad />} />
-          <Route
-            path="apartments"
-            element={<New inputs={userInputs} title="Apartments category" />}
-          />
-          <Route path="bookings" element={<Apart />} />
-          <Route path="messages" element={<Recieve />} />
-          <Route path="reply" element={<Notification />} />
-          <Route path="profile" element={<Admin />} /> */}
-        </Route>
+        <Route path="/dashboard" element={<DashboardHome />}></Route>
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </div>
