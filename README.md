@@ -1,4 +1,4 @@
-# HomeSwap - API
+# HomeSwap
 
 <div style="margin-bottom: 30px;" align="center">
 <img src="https://raw.githubusercontent.com/Canestin/assets/main/img/homeswap.png" alt="Logo HomeSwap"  width="330">
