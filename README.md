@@ -1,76 +1,58 @@
-# HomeSwap
+# HomeSwap - API
 
 <div style="margin-bottom: 30px;" align="center">
-<img src="https://raw.githubusercontent.com/Canestin/assets/main/img/homeswap.png" alt="Logo BreakFood"  width="300">
+<img src="https://raw.githubusercontent.com/Canestin/assets/main/img/homeswap.png" alt="Logo HomeSwap"  width="330">
 </div>
 
-## Getting Started with Create React App
+## API
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+https://github.com/Canestin/homeswap-api
+<br><br>
 
-## Available Scripts
+## Project description
 
-In the project directory, you can run:
+This project involves the development of a web application allowing individuals to exchange their houses, apartments, lofts, etc., for short vacation periods ranging from one day to a few weeks. The idea is that the exchanges are free, but each owner can define certain services that the guests will have to provide, as well as constraints and limits to be respected.
 
-### `npm start`
+## Main features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Registration and authentication of members.
+- Member profiles with useful information.
+- Addition of new accommodations, constraints and services via a dedicated interface.
+- Reservation of accommodation.
+- The owner can accept, reject or request additional information.
+- Detailed visualization of a dwelling (description, location, services, constraints, etc.).
+- Simple and advanced search for accommodation.
+- Dedicated messaging for communications between members.
+- Rating system allowing users to leave ratings and comments.
+- Dedicated back-office interface allowing the administrator to view the members, their announcements, and to delete elements if necessary.
+- Ability to add additional features for the site administrator.
+- Recommendation system (optional).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies
 
-### `npm test`
+The frontend of the application is developed using the following technologies:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React: JavaScript library for building user interfaces.
+- Redux: JavaScript library for managing application state.
+- HTML/SCSS: Markup language and styling for the web application.
 
-### `npm run build`
+## Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To install and run the frontend application locally, follow these steps:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Make sure you have Node.js installed on your machine.
+2. Clone the project repository from GitHub.
+3. Open a console/terminal and navigate to the project directory.
+4. Install project dependencies by running the following command:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm install
+```
 
-### `npm run eject`
+5. Once the installation is complete, start the application with the following command:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+npm start
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The application will be accessible at http://localhost:3000.
